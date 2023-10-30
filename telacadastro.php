@@ -1,31 +1,7 @@
 <?php
 
 if (isset($_POST['submit']))
-{
-   // print_r($_POST['nome']); 
-   //print_r('<br>'); 
-    
-    //print_r($_POST['email']);
-    //print_r('<br>'); 
-    
-    //print_r($_POST['cpf']);
-    //print_r('<br>'); 
-    
-    //print_r($_POST['telefone']);
-    //print_r('<br>'); 
-    
-    //print_r($_POST['genero']);
-    //print_r('<br>'); 
-    
-    //print_r($_POST['datanasc']);
-    //print_r('<br>'); 
-    
-    //print_r($_POST['endereco']);
-    //print_r('<br>'); //
-    
-    //print_r($_POST['senha']);
-    //print_r('<br>'); //
-    
+{    
    include_once('index.php');
    
    $nome = $_POST['nome'];
@@ -38,7 +14,13 @@ if (isset($_POST['submit']))
    $senha = $_POST['senha'];
    
  $resultado = mysqli_query($conexao,"INSERT INTO usu (nome,email,cpf,telefone,sexo,datanasc,endereco,senha) VALUES ('$nome','$email','$cpf','$telefone','$sexo','$datanasc','$endereco','$senha')");
+
+ 
+ header('Location: telalog.php');
+ 
 }
+
+ 
 
 ?>
 

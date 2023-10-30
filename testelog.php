@@ -6,8 +6,10 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
 {
     include_once ('index.php'); 
     
+    $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
+    
     
     
     $sql= "SELECT *FROM usu WHERE email = '$email' and senha = '$senha' ";
