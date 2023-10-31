@@ -51,9 +51,12 @@ li a {
   text-decoration: none;
 }
 
+
+
 li a:hover {
   background-color: #111;
 }
+
 
  body{
             background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
@@ -77,9 +80,9 @@ li a:hover {
 
 <ul>
   <li><a class="active" href="paginaadm.php">Home</a></li>
-  <li><a href="editarcadastro.php">Editar Prontuário</a></li>
-  <li><a href="#contact">Financeiro</a></li>
-  <li><a href="sair.php" class="btn btn-danger">Sair</a></li>
+  <li><a class="editar" href="editarcadastro.php">Editar Prontuário</a></li>
+  <li><a class="fina" href="#contact">Financeiro</a></li>
+  <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
      <?php
@@ -102,6 +105,9 @@ li a:hover {
                     <th scope="col">Sexo</th>
                     <th scope="col">Data de Nascimento</th>
                     <th scope="col">Endereço</th>
+                    <th scope="col">Data da Consulta</th>
+                    <th scope="col">Procedimentos realizados</th>
+                    <th scope="col">Procedimentos em andamento</th>
                 </tr>
             </thead>
             <tbody>
@@ -117,6 +123,10 @@ li a:hover {
                         echo "<td>".$user_data['sexo']."</td>";
                         echo "<td>".$user_data['datanasc']."</td>";
                         echo "<td>".$user_data['endereco']."</td>";
+                        echo "<td>".$user_data['dataconsulta']. "</td>";
+                        echo "<td>".$user_data['prorealizados']. "</td>";
+                        echo "<td>".$user_data['proandamento']. "</td>";
+                        
                        
                         echo "<td>
                         <a class='btn btn-sm btn-primary' href='editarcadastro.php?id=$user_data[id]'>

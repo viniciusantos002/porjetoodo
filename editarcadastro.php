@@ -17,7 +17,10 @@
                 $sexo = $user_data['sexo'];
                 $datanasc = $user_data['datanasc'];
                 $endereco = $user_data['endereco'];
+                $dataconsulta = $user_data['dataconsulta'];
                 $senha = $user_data['senha'];
+                $prorealizados = $user_data['prorealizados'];
+                $proandamento = $user_data['proandamento'];
             }
         }
         else
@@ -37,10 +40,15 @@
     <title>Editar Cliente </title>
     <style>
         body{
+           
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+            background-image: url(./logi.png) ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
         }
         .box{
+            text-align: center;
             color: white;
             position: absolute;
             top: 50%;
@@ -63,6 +71,7 @@
         }
         .inputBox{
             position: relative;
+            text-align: center;
         }
         .inputUser{
             background: none;
@@ -107,10 +116,25 @@
         #submit:hover{
             background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
         }
+        
+        a{
+            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+            width: 50%;
+            border: none;
+            padding: 10px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 15px;
+           
+        }
+        a:hover{
+            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
+        }
     </style>
 </head>
 <body>
-    <a href="paginaadm.php">Voltar</a>
+   
     <div class="box">
         <form action="salvareditar.php" method="POST">
             <fieldset>
@@ -160,8 +184,30 @@
                     <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
+                
+                <br><br>
+                <label for="dataconsulta"><b>Data da Consulta</b></label>
+                <input type="date" name="dataconsulta" id="dataconsulta" value=<?php echo $dataconsulta;?> >
+                <br><br>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="prorealizados" id="prorealizados" class="inputUser" value=<?php echo $prorealizados;?> >
+                    <label for="prorealizados" class="labelInput">Procedimentos Realizados</label>
+                </div>
+                <br><br>
+                
+                <br><br>
+                
+                <div class="inputBox">
+                    <input type="text" name="proandamento" id="proandamento" class="inputUser" value=<?php echo $proandamento;?> >
+                    <label for="proandamento" class="labelInput">Procedimentos em Andamento</label>
+                </div>
+                <br><br>
 				<input type="hidden" name="id" value=<?php echo $id;?>>
                 <input type="submit" name="update" id="submit">
+                <br><br>
+                <a href="paginaadm.php">Voltar</a>
+                <br><br>
             </fieldset>
         </form>
     </div>

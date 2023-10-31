@@ -27,33 +27,32 @@ if (isset($_POST['submit']))
 <html lang="en">
 <head>
    
-    <title>Formulário </title>
+    <title>Cadastrar clientes </title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
+            background-image: url(./dentista.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
         }
         .box{
+            opacity: 0.6;
+            text-align: center;
             color: white;
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%,-50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 15px;
+            background-color:	#1E90FF;
+            padding: 30px;
             border-radius: 15px;
             width: 20%;
         }
         fieldset{
-            border: 3px solid dodgerblue;
+            border: blue;
         }
-        legend{
-            border: 1px solid dodgerblue;
-            padding: 10px;
-            text-align: center;
-            background-color: dodgerblue;
-            border-radius: 8px;
-        }
+        
         .inputBox{
             position: relative;
         }
@@ -74,12 +73,7 @@ if (isset($_POST['submit']))
             pointer-events: none;
             transition: .5s;
         }
-        .inputUser:focus ~ .labelInput,
-        .inputUser:valid ~ .labelInput{
-            top: -20px;
-            font-size: 12px;
-            color: dodgerblue;
-        }
+        
         #data_nascimento{
             border: none;
             padding: 8px;
@@ -106,7 +100,7 @@ if (isset($_POST['submit']))
          border:none;
          padding:15px;
          color: white;
-         font-size: 20px;
+         font-size: 15px;
          cursor: pointer;
          border-radius: 10px;
         

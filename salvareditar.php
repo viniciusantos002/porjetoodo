@@ -12,9 +12,12 @@
         $datanasc = $_POST['datanasc'];
         $endereco = $_POST['endereco'];
         $senha = $_POST['senha'];
+        $dataconsulta = $_POST['dataconsulta'];
+        $proandamento = $_POST['proandamento'];
+        $prorealizados = $_POST['prorealizados'];
         
         $sqlInsert = "UPDATE usu
-        SET nome='$nome',email='$email', cpf='$cpf',telefone='$telefone',sexo='$sexo',datanasc='$datanasc',endereco='$endereco' , senha='$senha'
+        SET nome='$nome',email='$email', cpf='$cpf',telefone='$telefone',sexo='$sexo',datanasc='$datanasc',endereco='$endereco' , senha='$senha' , prorealizados='$prorealizados' , proandamento='$proandamento' , dataconsulta='$dataconsulta'
         WHERE id=$id";
         $resultado = $conexao->query($sqlInsert);
         print_r($resultado);

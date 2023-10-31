@@ -2,40 +2,66 @@
 <html lang="en">
 <head>
         
-    <title>Tela de login</title>
+    <title>Login </title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(45deg, cyan, yellow);
+            background-image: url(./dente.png)  ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100%;
+            
         }
         div{
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 191 , 255 );
+            opacity: 0.5;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
             padding: 80px;
-            border-radius: 15px;
-            color: #fff;
+            border-radius: 55px;
+            color: whitesmoke;
+            text-align: center;
         }
         input{
             padding: 15px;
-            border: none;
+            border-radius: 15px;
             outline: none;
-            font-size: 15px;
+            font-size: 20px;
         }
         .inputsubmit{
             background-color: dodgerblue;
             border: none;
             padding: 15px;
             width: 100%;
-            border-radius: 10px;
+            border-radius: 50px;
             color: white;
-            font-size: 15px;
+            font-size: 20px;
             
         }
         .inputsubmit:hover{
-            background-color: deepskyblue;
+            background-color: cyan;
+            cursor: pointer;
+        }
+        a{
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+        }
+        a{
+            background-color: dodgerblue;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 50px;
+            color: white;
+            font-size: 20px;
+            
+        }
+        a:hover{
+            background-color: cyan;
             cursor: pointer;
         }
     </style>
@@ -46,7 +72,7 @@
         <form action="testelog.php" method="POST">
         <input type="text" name="email" placeholder="Email">
         <br><br>
-        <input type="password" name="senha" placeholder="senha">
+        <input type="password" name="senha" placeholder="Senha">
         <br><br>
         <input class="inputsubmit" type="submit" name="submit" value="Enviar">
         </form>
