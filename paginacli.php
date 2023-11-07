@@ -1,101 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Médica</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+  session_start();
+  include_once ('index.php');
+  
+  if((!isset($_SESSION['email']) ==true) and (!isset($_SESSION['senha']) ==true))
+  {
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+
+      header('Location: telalog.php');
+      
+  }
+  $logado = $_SESSION['email'];
+  
+   if(!empty($_GET['search']))
+    {
+        $date = $_GET['search'];
+        $sql = "SELECT * FROM usu WHERE id ='$id' ";
+    }
+    else
+    {
+        $sql = "SELECT * FROM usu ";
+    }
+    $resultado = $conexao->query($sql);
+  
+?>
+<html>
+    
+    <head>
+    </head>
+    <body>
+        <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1E90FF;
+ 
+}
+
+li {
+  float: left;
+}
+
+li a {
+  position: relative;  
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+li a:hover {
+  background-color: white;
+}
+
+
+ body{
+           background-color: blue;
+           background-image: url(./fundoadm.png)  ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:100%;
+           text-align: center;
+        }
+        .table-bg{
+            opacity: 0.8;
+            background: rgba(65 , 105 , 237);
+            border-radius: 15px 15px 10px 10px;
         }
 
-        header {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 0;
+        .box-search{
+            display: flex;
+            justify-content: center;
+            
+        }
+        table{
             text-align: center;
+        }    
+        h4{
+            text-align: right;
         }
-
-        nav {
-            background-color: #333;
-            overflow: hidden;
+        h2{
+            text-align: left;
         }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .contact-section {
-            margin-top: 20px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+</style>
 </head>
-
 <body>
-    <header>
-        <h1>Clínica Médica</h1>
+     <header>
+        <h1>Clínica Odontológica</h1>
+          <?php
+     
+     echo"<h4> Seja bem vindo  $logado </h4>";
+     
+     ?>
     </header>
+    
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Serviços</a>
-        <a href="#about">Sobre</a>
-        <a href="#contact">Contato</a>
-    </nav>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <div class="content">
-        <h2 id="home">Bem-vindo à Clínica Médica!</h2>
-        <p>Sua saúde é nossa prioridade. Oferecemos serviços médicos de alta qualidade para cuidar de você e de sua família.</p>
-
-        <h2 id="services">Nossos Serviços</h2>
-        <ul>
-            <li>Consulta Médica</li>
-            <li>Exames Laboratoriais</li>
-            <li>Tratamentos Especializados</li>
-            <li>Prevenção e Educação em Saúde</li>
-        </ul>
-
-        <h2 id="about">Sobre Nós</h2>
-        <p>Somos uma equipe dedicada de profissionais de saúde comprometidos em fornecer o melhor atendimento médico para nossos pacientes.</p>
-
-        <div class="contact-section" id="contact">
-            <h2>Entre em Contato</h2>
-            <p>Estamos aqui para ajudar. Entre em contato conosco para agendar uma consulta ou fazer perguntas sobre nossos serviços.</p>
-            <p>Telefone: (123) 456-7890<br>
-               Email: info@clinicamedica.com</p>
-        </div>
-    </div>
-
-    <footer>
-        &copy; 2023 Clínica Médica. Todos os direitos reservados.
-    </footer>
-</body>
-
+<ul>
+  <li><a class="active" href="paginaadm.php">Home</a></li>
+  <li><a class="" href="dadoscli.php">Seus Dados</a></li>
+  <li><a class="" href="chat.php">Chat para contato</a>
+  </li>
+  <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
+</ul>
+       
+    
+     <br><br>
+     <h3> Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica  </h3> <br> <br>
+     
+     <h1> Clinico geral</h1>
+     
+     <h3> Esse especialista é o que vai fazer a avaliaçao de seus dentes para verificar como anda o estado deles, além disso ele pode realizar outros procedimentos como :
+     
+     </h3>
+     <br><br>
+     
+     <h2> -Restaurações </h2>
+     <h2> -Aplicação de fluor </h2>
+     <h2> -Tratamento de canal </h2>
+     
+     
+    
+         
+    </body>
+       
 </html>

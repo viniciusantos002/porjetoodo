@@ -37,11 +37,12 @@ if (isset($_POST['submit']))
             background-size: 100%;
         }
         .box{
+            
             opacity: 0.6;
             text-align: center;
             color: white;
             position: absolute;
-            top: 55%;
+            top: 65%;
             left: 50%;
             transform: translate(-50%,-50%);
             background-color:	#1E90FF;
@@ -53,9 +54,8 @@ if (isset($_POST['submit']))
             border: blue;
         }
         
-        .inputBox{
-            position: relative;
-        }
+        
+        
         .inputUser{
             background: none;
             border: none;
@@ -67,7 +67,7 @@ if (isset($_POST['submit']))
             letter-spacing: 2px;
         }
         .labelInput{
-            position: absolute;
+           
             top: 0px;
             left: 0px;
             pointer-events: none;
@@ -92,7 +92,6 @@ if (isset($_POST['submit']))
             border-radius: 10px;
         }
         
-       
         a{
          background-color: blue;
          width: 100%;
@@ -116,23 +115,27 @@ if (isset($_POST['submit']))
                 
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="cpf" id="cpf" class="inputUser" required>
                     <label for="cpf" class="labelInput">CPF</label>
+                    <input type="text" name="cpf" id="cpf" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
                     <label for="telefone" class="labelInput">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <p>Sexo</p>
@@ -151,13 +154,15 @@ if (isset($_POST['submit']))
                 <br><br>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
                     <label for="endereco" class="labelInput">Endereço</label>
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="inputUser" required>
                     <label for="senha" class="labelInput">Senha</label>
+                    <input type="text" name="senha" id="senha" class="inputUser" required>
+                    
                 </div>
                 <br><br>
                 <input type="submit" name="submit" id="submit">

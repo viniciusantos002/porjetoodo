@@ -32,47 +32,141 @@
     
 <head>
     <style>
-         body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-size: 100%;
-            
-        }
-        div{
-            background-color: rgba(0, 191 , 255 );
-            opacity: 0.7;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            padding: 80px;
-            border-radius: 55px;
-            color: whitesmoke;
-            text-align: center;
-            
-        }
-        input{
-            padding: 5px;
-            border-radius: 25px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+   
+    background-image: url(./fundchat.png)  ;
+    background-color: #f7f7f7;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+
+.chat-container {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    width: 100%;
+    max-width: 800px;
+    background-color: lightblue;
+    border-radius: 30px;
+    overflow: hidden;
+    
+}
+.chat-messages {
+    
+    padding: 150px;
+    height: 300px;
+    overflow-y: scroll;
+}
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    
+}
+
+
+.sent-message {
+    background-color: #4caf50;
+    color: white;
+    
+}
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input button {
+            cursor: pointer;
+            border-radius:  15px;
             outline: none;
-            font-size: 25px;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color:dodgerblue;
+            padding: 5px;
+            width: 100%;
+            border-radius: 50px;
+            color: white;
             
-        }
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        max-width: 100%;
+    }
+}
+h1{
+   
+     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ a{
+      cursor: pointer;
+            border-radius: 35px;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color:dodgerblue;
+            padding: 5px;
+            width: 100%;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+    justify-content: center;
+   
+         
         
-        </style>
+        }
+
+    </style>
+        
 </head>    
    <body>
 
        <h1> Chat </h1>
-       
-       
-      
-       <input type="text" id="nome" placeholder="Seunome" autocomplete="off"/><br/>
-       
-       
-       <input type="text" id="mensagem" placeholder="Mensagem"/>
-       <button id="enviar">Enviar </button>
+       <br><br>
+               <div class="chat-container">
+        <div class="chat-messages">
        <div id="mensagens">
+          
+       </div>
+            
+            <div class="chat-input">
+             <input type="text" id="nome" placeholder="Seunome" autocomplete="off"/><br/>
+            </div>
+            <div class="chat-input">
+       <input type="text" id="mensagem" placeholder="Mensagem"/>
+    
+            </div>
+            <div class="chat-input button">
+             <button id="enviar">Enviar </button>
            
+            </div>
+            
+            <div>
+                <div class="chat-input button">
+                    
+                    <a href="paginacli.php">Voltar </a></div>
+            </div>
        </div>
        <script>
            const inputNome = document.getElementById("nome");
@@ -115,3 +209,6 @@
            
            setInterval(atualizaMensagens, 2000);
        </script>    
+       
+   </body>
+</html>

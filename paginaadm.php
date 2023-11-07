@@ -61,9 +61,12 @@ li a:hover {
 
 
  body{
-            background-color: blue;
-           
-            text-align: center;
+           background-color: blue;
+           background-image: url(./fundoadm.png)  ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:100%;
+           text-align: center;
         }
         .table-bg{
             opacity: 0.8;
@@ -79,26 +82,21 @@ li a:hover {
         table{
             text-align: center;
         }    
-                header {
-            background-color: #1E90FF;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
+
 </style>
 </head>
 <body>
      <header>
-        <h1>Clínica Médica</h1>
+        <h1>Clínica Odontológica</h1>
     </header>
 
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <ul>
   <li><a class="active" href="paginaadm.php">Home</a></li>
- 
   <li><a class="" href="financeiro.php">Financeiro</a></li>
-  <li><a class="" href="chat.php">Chat</a></li>
+  <li><a class="" href="chat.php">Chat</a>
+  </li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        

@@ -39,6 +39,10 @@
 <html>
     
     <head>
+        
+             <header>
+        <h1>Clínica Odontológica</h1>
+    </header>
     </head>
     <body>
         <style>
@@ -96,15 +100,18 @@ li a:hover {
 
 <ul>
   <li><a class="active" href="paginaadm.php">Home</a></li>
- 
   <li><a class="" href="financeiro.php">Financeiro</a></li>
+  <li><a class="" href="chat.php">Chat</a></li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
      <?php
-
-$sql = "SELECT valor, quantidade FROM financeiro";
-$resultado = $conexao->query($sql);
+     
+      if(!empty($_GET['id']))
+    {
+        $id = $_GET['id'];
+        $sqlSelect = "SELECT * FROM financeiro WHERE id=$id";
+        $resultado = $conexao->query($sqlSelect);
 
 
 
@@ -114,18 +121,19 @@ if ($resultado->num_rows > 0) {
 
    
     while ($row = $resultado->fetch_assoc()) {
-        $valor1 = $row['valor'];
-        $valor2 = $row['quantidade'];
+       
+        $valor = ['valor'];
+        $quantidade = ['quantidade'];
         
         
-        $multiplica = $valor1 * $valor2;
-        $sqlInsert= "UPDATE financeiro SET total='$multiplica'";
+        $multiplica = $valor * $quantidade;
+        $sqlSelect= "UPDATE financeiro SET total='$multiplica'";
     }
     echo"Resultado é $multiplica";
 
 }
 
-
+    }
 
 ?>
 
