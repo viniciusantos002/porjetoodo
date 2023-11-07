@@ -38,41 +38,34 @@
 <head>
     
     <title>Editar Cliente </title>
-    <style>
-        body{
-           
+     <style>
+       body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: url(./logi.png) ;
+            background-image: url(./dentista.png);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100%;
         }
         .box{
+            
+            opacity: 0.6;
             text-align: center;
             color: white;
             position: absolute;
-            top: 50%;
+            top: 85%;
             left: 50%;
             transform: translate(-50%,-50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 15px;
+            background-color:	#1E90FF;
+            padding: 30px;
             border-radius: 15px;
             width: 20%;
         }
         fieldset{
-            border: 3px solid dodgerblue;
+            border: blue;
         }
-        legend{
-            border: 1px solid dodgerblue;
-            padding: 10px;
-            text-align: center;
-            background-color: dodgerblue;
-            border-radius: 8px;
-        }
-        .inputBox{
-            position: relative;
-            text-align: center;
-        }
+        
+        
+        
         .inputUser{
             background: none;
             border: none;
@@ -84,18 +77,13 @@
             letter-spacing: 2px;
         }
         .labelInput{
-            position: absolute;
+           
             top: 0px;
             left: 0px;
             pointer-events: none;
             transition: .5s;
         }
-        .inputUser:focus ~ .labelInput,
-        .inputUser:valid ~ .labelInput{
-            top: -20px;
-            font-size: 12px;
-            color: dodgerblue;
-        }
+        
         #data_nascimento{
             border: none;
             padding: 8px;
@@ -104,7 +92,7 @@
             font-size: 15px;
         }
         #submit{
-            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+            background-color: blue;
             width: 100%;
             border: none;
             padding: 15px;
@@ -113,52 +101,55 @@
             cursor: pointer;
             border-radius: 10px;
         }
-        #submit:hover{
-            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
-        }
         
         a{
-            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
-            width: 50%;
-            border: none;
-            padding: 10px;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 15px;
-           
+         background-color: blue;
+         width: 100%;
+         border:none;
+         padding:15px;
+         color: white;
+         font-size: 15px;
+         cursor: pointer;
+         border-radius: 10px;
+         text-decoration: none;
+        
         }
-        a:hover{
-            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
-        }
-    </style>
+        
+    </style>    
 </head>
 <body>
    
     <div class="box">
         <form action="salvareditar.php" method="POST">
             <fieldset>
+                
                 <legend><b>Editar Cliente</b></legend>
-                <br>
-                <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" value=<?php echo $nome;?> required>
-                    <label for="nome" class="labelInput">Nome completo</label>
-                </div>
                 <br><br>
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" value=<?php echo $email;?> required>
-                    <label for="email" class="labelInput">Email</label>
+              
+                    <label for="nome" class="labelInput">Nome completo</label>
+                     <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" value=<?php echo $nome;?> required>
+
                 </div>
                 <br><br>
                
-                <div class="inputBox">
-                    <input type="text" name="cpf" id="cpf" class="inputUser" value=<?php echo $cpf;?> required>
-                    <label for="cpf" class="labelInput">CPF</label>
+                    <label for="email" class="labelInput">Email</label>
+                    <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" value=<?php echo $email;?> required>
+                   
                 </div>
                 <br><br>
+                 
+                <label for="cpf" class="labelInput">CPF</label>
+                <div class="inputBox">
+                    <input type="text" name="cpf" id="cpf" class="inputUser" value=<?php echo $cpf;?> required>
+                  
+                </div>
+                <br><br>
+                <label for="telefone" class="labelInput">Telefone</label>
                 <div class="inputBox">
                     <input type="tel" name="telefone" id="telefone" class="inputUser" value=<?php echo $telefone;?> required>
-                    <label for="telefone" class="labelInput">Telefone</label>
+                    
                 </div>
                 <p>Sexo:</p>
                 <input type="radio" id="feminino" name="genero" value="feminino" <?php echo ($sexo == 'feminino') ? 'checked' : '';?> required>
@@ -171,37 +162,45 @@
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="data_nascimento"><b>Data de Nascimento</b></label>
+                <br><br>
                 <input type="date" name="datanasc" id="datanasc" value=<?php echo $datanasc;?> required>
                 <br><br><br>
                 <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" value=<?php echo $endereco;?> required>
                     <label for="endereco" class="labelInput">Endereço</label>
+                    <input type="text" name="endereco" id="endereco" class="inputUser" value=<?php echo $endereco;?> required>
+                    
                 </div>
                 <br><br>
                 
                 <div class="inputBox">
-                    <input type="text" name="senha" id="senha" class="inputUser" value=<?php echo $senha;?> required>
                     <label for="senha" class="labelInput">Senha</label>
+                    <input type="text" name="senha" id="senha" class="inputUser" value=<?php echo $senha;?> required>
+                    
+                    
                 </div>
                 <br><br>
                 
                 <br><br>
                 <label for="dataconsulta"><b>Data da Consulta</b></label>
+                <br><br>
                 <input type="date" name="dataconsulta" id="dataconsulta" value=<?php echo $dataconsulta;?> >
                 <br><br>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="prorealizados" id="prorealizados" class="inputUser" value=<?php echo $prorealizados;?> >
                     <label for="prorealizados" class="labelInput">Procedimentos Realizados</label>
+                    <input type="text" name="prorealizados" id="prorealizados" class="inputUser" value=<?php echo $prorealizados;?> >
+                    
                 </div>
                 <br><br>
                 
                 <br><br>
                 
                 <div class="inputBox">
-                    <input type="text" name="proandamento" id="proandamento" class="inputUser" value=<?php echo $proandamento;?> >
                     <label for="proandamento" class="labelInput">Procedimentos em Andamento</label>
+                    <input type="text" name="proandamento" id="proandamento" class="inputUser" value=<?php echo $proandamento;?> >
+                    
                 </div>
+                <br><br>
                 <br><br>
 				<input type="hidden" name="id" value=<?php echo $id;?>>
                 <input type="submit" name="update" id="submit">

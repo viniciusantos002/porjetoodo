@@ -28,21 +28,52 @@
 ?>
 
 <html lang="pt-br">
-    <head>
-   </head>
    
+    
+<head>
+    <style>
+         body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-size: 100%;
+            
+        }
+        div{
+            background-color: rgba(0, 191 , 255 );
+            opacity: 0.7;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 80px;
+            border-radius: 55px;
+            color: whitesmoke;
+            text-align: center;
+            
+        }
+        input{
+            padding: 5px;
+            border-radius: 25px;
+            outline: none;
+            font-size: 25px;
+            
+        }
+        
+        </style>
+</head>    
    <body>
+
        <h1> Chat </h1>
        
-       <label for="nome"> Nome:</label><br/>
+       
+      
        <input type="text" id="nome" placeholder="Seunome" autocomplete="off"/><br/>
        
-       <div id="mensagens">
-           
-       </div>
        
        <input type="text" id="mensagem" placeholder="Mensagem"/>
        <button id="enviar">Enviar </button>
+       <div id="mensagens">
+           
+       </div>
        <script>
            const inputNome = document.getElementById("nome");
            const inputMensagem = document.getElementById("mensagem");
@@ -82,5 +113,5 @@
            }
            atualizaMensagens();
            
-           setInterval(atualizaMensagens, 3000);
+           setInterval(atualizaMensagens, 2000);
        </script>    

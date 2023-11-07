@@ -14,7 +14,7 @@
         }
         div{
             background-color: rgba(0, 191 , 255 );
-            opacity: 0.5;
+            opacity: 0.7;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -23,6 +23,7 @@
             border-radius: 55px;
             color: whitesmoke;
             text-align: center;
+            
         }
         input{
             padding: 15px;
@@ -31,7 +32,12 @@
             font-size: 20px;
         }
         .inputsubmit{
-            background-color: dodgerblue;
+           padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color: blue;
             border: none;
             padding: 15px;
             width: 100%;
@@ -41,7 +47,7 @@
             
         }
         .inputsubmit:hover{
-            background-color: cyan;
+            background-color: blue;
             cursor: pointer;
         }
         a{
@@ -49,9 +55,8 @@
             border: none;
             outline: none;
             font-size: 20px;
-        }
-        a{
-            background-color: dodgerblue;
+            text-decoration: none;        
+            background-color: blue;
             border: none;
             padding: 15px;
             width: 100%;
@@ -61,7 +66,7 @@
             
         }
         a:hover{
-            background-color: cyan;
+            background-color: blue;
             cursor: pointer;
         }
     </style>
@@ -70,13 +75,13 @@
     <div>
         <h1>Login</h1>
         <form action="testelog.php" method="POST">
-        <input type="text" name="email" placeholder="Email">
+            <input type="text" name="email" placeholder="Email" required>
         <br><br>
-        <input type="password" name="senha" placeholder="Senha">
+        <input type="password" name="senha" placeholder="Senha" required>
         <br><br>
         <input class="inputsubmit" type="submit" name="submit" value="Enviar">
         </form>
-        <h3> Ainda não pssui cadastro </h3>
+        <h3> Ainda não pssui cadastro? </h3>
         
         <a href="telacadastro.php"> Clique aqui </a> 
     </div>

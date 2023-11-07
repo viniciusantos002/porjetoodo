@@ -82,7 +82,7 @@ if (isset($_POST['submit']))
             font-size: 15px;
         }
         #submit{
-            background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+            background-color: blue;
             width: 100%;
             border: none;
             padding: 15px;
@@ -91,11 +91,10 @@ if (isset($_POST['submit']))
             cursor: pointer;
             border-radius: 10px;
         }
-        #submit:hover{
-            background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
-        }
+        
+       
         a{
-         background-image: linear-gradient(to right,rgb(0, 92, 197), rgb(90, 20, 220));
+         background-color: blue;
          width: 100%;
          border:none;
          padding:15px;
@@ -103,6 +102,7 @@ if (isset($_POST['submit']))
          font-size: 15px;
          cursor: pointer;
          border-radius: 10px;
+         text-decoration: none;
         
         }
         
@@ -113,7 +113,8 @@ if (isset($_POST['submit']))
         <form action="telacadastro.php" method="POST">
             <fieldset>
                 <legend><b>Cadastro de Clientes</b></legend>
-                <br>
+                
+                <br><br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
                     <label for="nome" class="labelInput">Nome completo</label>
