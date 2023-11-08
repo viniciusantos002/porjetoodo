@@ -61,12 +61,14 @@ li a:hover {
 
 
  body{
-           background-color: blue;
-           background-image: url(./fundoadm.png)  ;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-image: url(./fundoadm.png)  ;
+           background-color: white;
+           justify-content: center;
+           align-items: center;
             background-size:100%;
            text-align: center;
+           overflow-y: scroll;
+           height: 100%;
         }
         .table-bg{
             opacity: 0.8;
@@ -85,8 +87,22 @@ li a:hover {
         h4{
             text-align: right;
         }
+        
+        h1{
+            text-align: center;
+        }
         h2{
-            text-align: left;
+            text-align: center;
+        }
+        div{ 
+            opacity: 0.9;
+            text-align: center;
+            border-radius: 35px 35px 35px 35px;
+            text-decoration: none;
+            background: rgba(65 , 105 , 237);
+            height: 800px;
+            width: 1600px;
+            padding: 20px;
         }
 </style>
 </head>
@@ -111,22 +127,26 @@ li a:hover {
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
-    
+     <div>
      <br><br>
-     <h3> Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica  </h3> <br> <br>
+      Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica   <br> <br>
      
      <h1> Clinico geral</h1>
      
-     <h3> Esse especialista é o que vai fazer a avaliaçao de seus dentes para verificar como anda o estado deles, além disso ele pode realizar outros procedimentos como :
+      <h5>Esse especialista é o que vai fazer a avaliaçao de seus dentes para verificar como anda o estado deles, além disso ele pode realizar outros procedimentos como :
+      </h5>
      
-     </h3>
      <br><br>
      
-     <h2> -Restaurações </h2>
-     <h2> -Aplicação de fluor </h2>
-     <h2> -Tratamento de canal </h2>
+     <h6> -Restaurações </h6>
+     <h6> -Aplicação de fluor </h6>
+     <h6> -Tratamento de canal </h6>
+     <h6> -Cirurgia simples </h6>
+     <h6> -Aplicação de selante</h6>
+     <h6> -Limpeza</h6>
+     <h6> -Colocação e retirada de aparelho</h6>
      
-     
+     </div>
     
          
     </body>

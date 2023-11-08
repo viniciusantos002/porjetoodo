@@ -123,6 +123,7 @@ li a:hover {
                     <th scope="col">Data da Consulta</th>
                     <th scope="col">Procedimentos realizados</th>
                     <th scope="col">Procedimentos em andamento</th>
+                    <th scope="col">Nivel de Acesso</th>
                     <th scope="col">Editar cadastro</th>
                     <th scope="col">Excluir</th>
                 </tr>
@@ -143,6 +144,7 @@ li a:hover {
                         echo "<td>".$user_data['dataconsulta']. "</td>";
                         echo "<td>".$user_data['prorealizados']. "</td>";
                         echo "<td>".$user_data['proandamento']. "</td>";
+                        echo "<td>".$user_data['nivel']."</td>";
                        
                         
                        

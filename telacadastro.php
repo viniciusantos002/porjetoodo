@@ -12,8 +12,9 @@ if (isset($_POST['submit']))
    $datanasc = $_POST['datanasc'];
    $endereco = $_POST['endereco'];
    $senha = $_POST['senha'];
+   $nivel = $_POST['nivel'];
    
- $resultado = mysqli_query($conexao,"INSERT INTO usu (nome,email,cpf,telefone,sexo,datanasc,endereco,senha) VALUES ('$nome','$email','$cpf','$telefone','$sexo','$datanasc','$endereco','$senha')");
+ $resultado = mysqli_query($conexao,"INSERT INTO usu (nome,email,cpf,telefone,sexo,datanasc,endereco,senha,nivel) VALUES ('$nome','$email','$cpf','$telefone','$sexo','$datanasc','$endereco','$senha','$nivel)");
 
  
  header('Location: telalog.php');
@@ -165,6 +166,11 @@ if (isset($_POST['submit']))
                     
                 </div>
                 <br><br>
+                <div class="inputBox">
+                    <label for="nivel" class="labelInput">Nivel de acesso</label>
+                    <input type="text" name="nivel" id="nivel" class="inputUser" required>
+                    
+                </div>
                 <input type="submit" name="submit" id="submit">
                 <br><br>
                 <a href="telalog.php"> Voltar </a>

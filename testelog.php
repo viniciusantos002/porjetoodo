@@ -31,7 +31,7 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
 }
 
 else{
-    
+    echo "Dados invalidos";
     header('Location:telalog.php');
     
 }
