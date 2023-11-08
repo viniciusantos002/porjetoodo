@@ -81,7 +81,10 @@ li a:hover {
         }
         table{
             text-align: center;
-        }    
+        }
+        caption{
+            text-align: center;
+        }
 
 </style>
 </head>
@@ -106,12 +109,13 @@ li a:hover {
      
      ?>
      
-     <br>
+     
     
     <div class="m-5">
-        <table class="table text-white table-bg">
+          <h3> Dados dos Clientes </h3>
+        <table class="table text-white table-bg"> 
             <thead>
-                <tr>
+ 
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Email</th>

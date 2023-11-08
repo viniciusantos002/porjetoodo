@@ -49,8 +49,8 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 0.8;
-    width: 100%;
-    max-width: 800px;
+    height: 700px;
+    width: 1650px;
     background-color: lightblue;
     border-radius: 30px;
     overflow: hidden;
@@ -114,7 +114,7 @@ body {
 }
 h1{
    
-     margin: 0;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +128,7 @@ h1{
             background-color:dodgerblue;
             padding: 5px;
             width: 100%;
-            border-radius: 30px;
+           
             color: white;
             display: flex;
     justify-content: center;

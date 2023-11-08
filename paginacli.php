@@ -16,11 +16,11 @@
    if(!empty($_GET['search']))
     {
         $date = $_GET['search'];
-        $sql = "SELECT * FROM usu WHERE id ='$id' ";
+        $sql = "SELECT * FROM usu WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
     }
     else
     {
-        $sql = "SELECT * FROM usu ";
+        $sql = "SELECT * FROM usu ORDER BY id ASC";
     }
     $resultado = $conexao->query($sql);
   
@@ -120,7 +120,7 @@ li a:hover {
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <ul>
-  <li><a class="active" href="paginaadm.php">Home</a></li>
+  <li><a class="active" href="paginacli.php">Home</a></li>
   <li><a class="" href="dadoscli.php">Seus Dados</a></li>
   <li><a class="" href="chat.php">Chat para contato</a>
   </li>

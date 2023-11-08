@@ -8,10 +8,11 @@
         $nome = $_POST['nome'];
         $valor = $_POST['valor'];
         $quantidade = $_POST['quantidade'];
+        $total = $_POST['total'];
         
         
         $sqlInsert = "UPDATE financeiro
-        SET nome='$nome',valor='$valor', quantidade='$quantidade'
+        SET nome='$nome',valor='$valor', quantidade='$quantidade' , total='$total'
         WHERE id=$id";
         $resultado = $conexao->query($sqlInsert);
         print_r($resultado);

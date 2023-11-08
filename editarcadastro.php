@@ -21,6 +21,7 @@
                 $senha = $user_data['senha'];
                 $prorealizados = $user_data['prorealizados'];
                 $proandamento = $user_data['proandamento'];
+                $nivel = $user_data['nivel'];
             }
         }
         else
@@ -104,7 +105,7 @@
         
         a{
          background-color: blue;
-         width: 100%;
+         width: 290px;
          border:none;
          padding:15px;
          color: white;
@@ -112,6 +113,9 @@
          cursor: pointer;
          border-radius: 10px;
          text-decoration: none;
+        justify-content: center;
+        display: flex;
+        
         
         }
         
@@ -201,6 +205,10 @@
                     
                 </div>
                 <br><br>
+                <div class="inputBox">
+                    <label for="nivel" class="labelInput"> Nivel de acesso </label>
+                    <input type="text" name="nivel" id="nivel" class="inputUser" value=<?php echo $nivel;?> >
+                </div>
                 <br><br>
 				<input type="hidden" name="id" value=<?php echo $id;?>>
                 <input type="submit" name="update" id="submit">

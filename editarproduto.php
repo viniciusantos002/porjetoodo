@@ -96,7 +96,7 @@
         
         a{
          background-color: blue;
-         width: 100%;
+         width: 290px;
          border:none;
          padding:15px;
          color: white;
@@ -104,6 +104,8 @@
          cursor: pointer;
          border-radius: 10px;
          text-decoration: none;
+        justify-content: center;
+        display: flex;
         
         }
         

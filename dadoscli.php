@@ -17,10 +17,8 @@
                 $sexo = $user_data['sexo'];
                 $datanasc = $user_data['datanasc'];
                 $endereco = $user_data['endereco'];
-                $dataconsulta = $user_data['dataconsulta'];
                 $senha = $user_data['senha'];
-                $prorealizados = $user_data['prorealizados'];
-                $proandamento = $user_data['proandamento'];
+                
             }
         }
         else

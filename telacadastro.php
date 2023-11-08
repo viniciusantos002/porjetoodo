@@ -94,8 +94,8 @@ if (isset($_POST['submit']))
         }
         
         a{
-         background-color: blue;
-         width: 100%;
+           background-color: blue;
+         width: 290px;
          border:none;
          padding:15px;
          color: white;
@@ -103,6 +103,9 @@ if (isset($_POST['submit']))
          cursor: pointer;
          border-radius: 10px;
          text-decoration: none;
+        justify-content: center;
+        display: flex;
+        
         
         }
         

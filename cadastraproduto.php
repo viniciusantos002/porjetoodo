@@ -11,7 +11,7 @@ if (isset($_POST['submit']))
    
    
  $resultado = mysqli_query($conexao,"INSERT INTO financeiro (nome,valor,quantidade) VALUES ('$nome','$valor' , '$quantidade')");
-  $fina=" UPDATE financeiro SET total = valor * quantidade";
+  $finan=" UPDATE financeiro SET total = valor * quantidade";
 
  
  header('Location: financeiro.php');

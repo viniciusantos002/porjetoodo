@@ -76,8 +76,12 @@ li a:hover {
 
  body{
             background-color: blue;
-           
+            background-image: url(./financeiro.png)  ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size:100%;
             text-align: center;
+           
         }
         .table-bg{
             opacity: 0.8;
@@ -117,7 +121,7 @@ li a:hover {
 
 if ($resultado->num_rows > 0) {
     
-    $multiplica = 1;
+    $total = 0;
 
    
     while ($row = $resultado->fetch_assoc()) {
@@ -126,10 +130,10 @@ if ($resultado->num_rows > 0) {
         $quantidade = ['quantidade'];
         
         
-        $multiplica = $valor * $quantidade;
-        $sqlSelect= "UPDATE financeiro SET total='$multiplica'";
+        $total = $valor * $quantidade;
+        $sqlSelect= "UPDATE financeiro SET total='$total'";
     }
-    echo"Resultado é $multiplica";
+    echo"Resultado é $total";
 
 }
 
