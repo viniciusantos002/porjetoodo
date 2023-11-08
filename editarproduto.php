@@ -158,7 +158,7 @@
 				<input type="hidden" name="id" value=<?php echo $id;?>>
                 <input type="submit" name="update" id="submit">
                 <br><br>
-                <a href="paginaadm.php">Voltar</a>
+                <a href="financeiro.php">Voltar</a>
                 <br><br>
             </fieldset>
         </form>
