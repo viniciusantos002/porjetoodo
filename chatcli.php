@@ -26,63 +26,49 @@
     }
     
 ?>
-<html lang="en">
 
+<html lang="pt-br">
+   
+    
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Chat Responsivo</title>
-</head>
-
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    
+   
+    background-image: url(./fundchat.png)  ;
     background-color: #f7f7f7;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
+
 
 .chat-container {
-    width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
-    border-radius: 10px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    height: 700px;
+    width: 1650px;
+    background-color: lightblue;
+    border-radius: 30px;
     overflow: hidden;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    
 }
-
 .chat-messages {
-    padding: 20px;
+    
+    padding: 150px;
     height: 300px;
     overflow-y: scroll;
 }
-
 .message {
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
-}
-
-.received-message {
-    background-color: #f2f2f2;
-}
-
-.sent-message {
-    background-color: #4caf50;
-    color: white;
-    align-self: flex-end;
-}
-
-.chat-input {
-    display: flex;
+     display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-top: 1px solid #ccc;
 }
 
 .chat-input input {
@@ -90,18 +76,35 @@
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 35px;
+    
+}
+
+
+.sent-message {
+    background-color: #4caf50;
+    color: white;
+    
+}
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .chat-input button {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+            cursor: pointer;
+            border-radius:  15px;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color:dodgerblue;
+            padding: 5px;
+            width: 100%;
+            border-radius: 50px;
+            color: white;
+            
 }
 
 @media (max-width: 768px) {
@@ -109,27 +112,63 @@
         max-width: 100%;
     }
 }
-</style>
-
-<body>
-    <div class="chat-container">
-        <div class="chat-messages">
-            <div class="message received-message">Olá! Como posso ajudar?</div>
-            <div class="message sent-message">Olá! Preciso de ajuda com um problema.</div>
-            <!-- Mensagens adicionais seriam inseridas aqui -->
-        </div>
-        
-        <div class="chat-input">
-            <input id="nome" type="text" placeholder="Digite seu nome aqui">
+h1{
+   
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ a{
+      cursor: pointer;
+            border-radius: 35px;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color:dodgerblue;
+            padding: 5px;
+            width: 100%;
            
-        </div>
-        <div class="chat-input">
-            <input id="mensagem" type="text" placeholder="Digite sua mensagem">
-            <button id="enviar">Enviar</button>
-        </div>
-        <button id="enviar">Enviar</button>
+            color: white;
+            display: flex;
+    justify-content: center;
+   
+         
         
-        <script>
+        }
+
+    </style>
+        
+</head>    
+   <body>
+
+       <h1> Chat </h1>
+       <br><br>
+               <div class="chat-container">
+        <div class="chat-messages">
+       <div id="mensagens">
+          
+       </div>
+            
+            <div class="chat-input">
+             <input type="text" id="nome" placeholder="Seunome" autocomplete="off"/><br/>
+            </div>
+            <div class="chat-input">
+       <input type="text" id="mensagem" placeholder="Mensagem"/>
+    
+            </div>
+            <div class="chat-input button">
+             <button id="enviar">Enviar </button>
+           
+            </div>
+            
+            <div>
+                <div class="chat-input button">
+                    
+                    <a href="paginacli.php">Voltar </a></div>
+            </div>
+       </div>
+       <script>
            const inputNome = document.getElementById("nome");
            const inputMensagem = document.getElementById("mensagem");
            
@@ -169,8 +208,7 @@
            atualizaMensagens();
            
            setInterval(atualizaMensagens, 2000);
-       </script>   
-    </div>
-</body>
-
+       </script>    
+       
+   </body>
 </html>

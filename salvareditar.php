@@ -17,8 +17,8 @@
         $prorealizados = $_POST['prorealizados'];
         $nivel = $_POST['nivel'];
         
-        $sqlInsert = "UPDATE usu
-        SET nome='$nome',email='$email', cpf='$cpf',telefone='$telefone',sexo='$sexo',datanasc='$datanasc',endereco='$endereco' , senha='$senha' , prorealizados='$prorealizados' , proandamento='$proandamento' , dataconsulta='$dataconsulta' , nivel='$nivel'
+        $sqlInsert = "UPDATE usuarios
+        SET nome='$nome',email='$email', cpf='$cpf',telefone='$telefone',genero='$sexo',datanasc='$datanasc',endereco='$endereco' , senha='$senha' , prorealizados='$prorealizados' , proandamento='$proandamento' , dataconsulta='$dataconsulta' , nivel='$nivel'
         WHERE id=$id";
         $resultado = $conexao->query($sqlInsert);
         print_r($resultado);

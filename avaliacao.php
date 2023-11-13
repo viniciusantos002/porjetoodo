@@ -8,10 +8,11 @@ $consulta = "SELECT id, nome FROM usuarios "; // Corrija esta consulta conforme 
 
 $resultadoConsulta = mysqli_query($conexao, $consulta);
 
+
 if ($resultadoConsulta) {
     $usuario = mysqli_fetch_assoc($resultadoConsulta);
 
-    echo "Bem-vindo " . $usuario['nome'];
+   
 } else {
     echo "Erro na consulta: " . mysqli_error($conexao);
 }
@@ -89,16 +90,9 @@ li a:hover {
         h2{
             text-align: center;
         }
-        div{ 
-            opacity: 0.9;
-            text-align: center;
-            border-radius: 35px 35px 35px 35px;
-            text-decoration: none;
-            background: rgba(65 , 105 , 237);
-            height: 800px;
-            width: 1600px;
-            padding: 20px;
-        }
+        
+        
+        
 </style>
 </head>
 <body>
@@ -117,29 +111,32 @@ li a:hover {
   <li><a class="" href="avaliacao.php">Avalie nosso atendimento</a></li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
-       
-     <div>
-     <br><br>
-      Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica   <br> <br>
      
-     <h1> Clinico geral</h1>
-     
-      <h5>Esse especialista é o que vai fazer a avaliaçao de seus dentes para verificar como anda o estado deles, além disso ele pode realizar outros procedimentos como :
-      </h5>
-     
-     <br><br>
-     
-     <h6> -Restaurações </h6>
-     <h6> -Aplicação de fluor </h6>
-     <h6> -Tratamento de canal </h6>
-     <h6> -Cirurgia simples </h6>
-     <h6> -Aplicação de selante</h6>
-     <h6> -Limpeza</h6>
-     <h6> -Colocação e retirada de aparelho</h6>
-     
-     </div>
-    
-         
-    </body>
-       
+      <section>
+        <h2>Avaliar Consulta</h2>
+        <form method="post" action="avaliasalva.php">
+            <p>Como você avalia a sua consulta?</p>
+            
+            <?php 
+                if(isset($_SESSION['msg'])){
+                    echo$_SESSION['msg'];
+                    unset($_SESSION['msg']);
+                }
+                ?>
+
+            <div class="">
+                <input type="radio" name="avaliacao" value="1" id="1-stars" /><label for="1-stars"></label>
+                <input type="radio" name="avaliacao" value="2" id="2-stars" /><label for="2-stars"></label>
+                <input type="radio" name="avaliacao" value="3" id="3-stars" /><label for="3-stars"></label>
+                <input type="radio" name="avaliacao" value="4" id="4-stars" /><label for="4-stars"></label>
+                <input type="radio" name="avaliacao" value="5" id="5-stars" /><label for="5-star"></label>
+            </div>
+
+            <button type="submit" name="upadte" id="submit">Enviar Avaliação</button>
+        </form>
+    </section>
+
+  
+</body>
+
 </html>

@@ -16,11 +16,11 @@
    if(!empty($_GET['search']))
     {
         $date = $_GET['search'];
-        $sql = "SELECT * FROM usu WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
+        $sql = "SELECT * FROM usuarios WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
     }
     else
     {
-        $sql = "SELECT * FROM usu ORDER BY id ASC";
+        $sql = "SELECT * FROM usuarios ORDER BY id ASC";
     }
     $resultado = $conexao->query($sql);
   

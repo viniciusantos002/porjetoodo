@@ -11,7 +11,7 @@
         $total = $_POST['total'];
         
         
-        $sqlInsert = "UPDATE financeiro
+        $sqlInsert = "UPDATE finan
         SET nome='$nome',valor='$valor', quantidade='$quantidade' , total='$total'
         WHERE id=$id";
         $resultado = $conexao->query($sqlInsert);

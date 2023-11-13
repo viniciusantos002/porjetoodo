@@ -13,7 +13,6 @@ if (isset($_POST['submit']))
    $endereco = $_POST['endereco'];
    $senha = $_POST['senha'];
    $nivel = $_POST['nivel'];
-   $estre = $_POST['avaliacao'];
    
    $verifica="SELECT * FROM usuarios WHERE email='$email' ";
    $resultado = mysqli_query($conexao,$verifica);
@@ -54,6 +53,7 @@ if (isset($_POST['submit']))
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100%;
+           
         }
         .box{
             
@@ -175,7 +175,10 @@ if (isset($_POST['submit']))
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="datanasc"><b>Data de Nascimento</b></label>
+                <br><br>
+                <br><br>
                 <input type="date" name="datanasc" id="datanasc" required>
+                
                 <br><br>
                 <br><br>
                 <div class="inputBox">
@@ -191,15 +194,11 @@ if (isset($_POST['submit']))
                     
                 </div>
                 <br><br>
-                <br><br>
-                <div class="inputBox">
-                    <label for="nivel" class="labelInput">Nivel de acesso</label>
-                    <input type="text" name="nivel" id="nivel" class="inputUser" required>
-                    
-                </div>
-                <br>
+              
+
                 <input type="submit" name="submit" id="submit">
                 <br><br>
+                
                 <a href="telalog.php"> Voltar </a>
                 
             </fieldset>

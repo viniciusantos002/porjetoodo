@@ -165,7 +165,7 @@ h1{
             <div>
                 <div class="chat-input button">
                     
-                    <a href="paginacli.php">Voltar </a></div>
+                    <a href="paginaadm.php">Voltar </a></div>
             </div>
        </div>
        <script>

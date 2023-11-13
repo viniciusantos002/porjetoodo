@@ -4,7 +4,7 @@
     if(!empty($_GET['id']))
     {
         $id = $_GET['id'];
-        $sqlSelect = "SELECT * FROM usu WHERE id=$id";
+        $sqlSelect = "SELECT * FROM usuarios WHERE id=$id";
         $resultado = $conexao->query($sqlSelect);
         if($resultado->num_rows > 0)
         {

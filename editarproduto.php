@@ -4,7 +4,7 @@
     if(!empty($_GET['id']))
     {
         $id = $_GET['id'];
-        $sqlSelect = "SELECT * FROM financeiro WHERE id=$id";
+        $sqlSelect = "SELECT * FROM finan WHERE id=$id";
         $resultado = $conexao->query($sqlSelect);
         if($resultado->num_rows > 0)
         {
@@ -125,7 +125,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100%;
-        }
+           }
        
         
     </style>

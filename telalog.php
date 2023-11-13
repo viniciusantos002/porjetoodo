@@ -83,7 +83,7 @@
         </form>
         <h3> Ainda não pssui cadastro? </h3>
         
-        <a href="telacadastro.php"> Clique aqui </a> 
+        <a href="clientecadastrando.php"> Clique aqui </a> 
     </div>
 </body>
 </html>

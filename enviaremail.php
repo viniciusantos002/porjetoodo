@@ -1,29 +1,28 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include_once ('index.php');
-    
-    // Recuperar os dados do formulário (substitua com os nomes dos seus campos de formulário)
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $dataconsulta = $_POST['dataconsulta'];
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    // Inserir os detalhes da consulta no banco de dados (substitua com sua lógica de inserção)
-    $sql = "INSERT INTO consultas (paciente_nome, paciente_email, data_consulta) VALUES ('$nome', '$email', '$dataConsulta')";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+</head>
 
-    if ($conexao->query($sql) === TRUE) {
-        // E-mail de confirmação
-        $assunto = "Confirmação de Consulta";
-        $mensagem = "Olá $nome,\n\n Sua consulta foi agendada para $dataConsulta.\n\nPor favor, confirme sua presença respondendo a este e-mail.";
+<body>
 
-        // Enviar e-mail de confirmação
-        mail($email, $assunto, $mensagem);
+    <h2>Confirmação de Presença</h2>
 
-        echo "Consulta agendada com sucesso. Um e-mail de confirmação foi enviado para o seu endereço de e-mail.";
-    } else {
-        echo "Erro ao agendar a consulta: " . $conexao->error;
-    }
+    <form action="confirmacaoemail.php" method="post">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required><br>
 
-    // Fechar a conexão com o banco de dados
-    $conexao->close();
-}
-?>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="mensagem">Mensagem</label>
+        <input type="text" id="mensagem" name="mensagem"><br>
+        <input type="submit" value="Confirmar Presença">
+    </form>
+
+</body>
+
+</html>

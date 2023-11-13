@@ -1,30 +1,35 @@
 <?php
 
-  session_start();
-  include_once ('index.php');
-  
-  if((!isset($_SESSION['email']) ==true) and (!isset($_SESSION['senha']) ==true))
-  {
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
+session_start();
+include_once ('index.php');
 
-      header('Location: telalog.php');
-      
-  }
-  $logado = $_SESSION['email'];
-  
-   if(!empty($_GET['search']))
-    {
-        $date = $_GET['search'];
-        $sql = "SELECT * FROM usu WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
-    }
-    else
-    {
-        $sql = "SELECT * FROM usu ORDER BY id ASC";
-    }
-    $resultado = $conexao->query($sql);
-  
+// Consulta para obter o nome do usuário
+$consulta = "SELECT id , nome FROM usuarios"; // Corrija esta consulta conforme necessário
+
+$resultadoConsulta = mysqli_query($conexao, $consulta);
+
+if ($resultadoConsulta) {
+    $usuario = mysqli_fetch_assoc($resultadoConsulta);
+
+    echo "Bem-vindo " . $usuario['nome'];
+} else {
+    echo "Erro na consulta: " . mysqli_error($conexao);
+}
+
+// Consulta secundária com filtro
+if (!empty($_GET['search'])) {
+    $date = $_GET['search'];
+    $sql = "SELECT * FROM usuarios WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
+} else {
+    $sql = "SELECT * FROM usuarios ORDER BY id ASC";
+}
+
+$resultado = mysqli_query($conexao, $sql);
+
+// Agora você pode usar $resultado para exibir os resultados da segunda consulta
+
 ?>
+
 <html>
     
     <head>
@@ -98,16 +103,12 @@ li a:hover {
 <ul>
   <li><a class="active" href="paginaadm.php">Home</a></li>
   <li><a class="" href="financeiro.php">Financeiro</a></li>
+  <li><a class="" href="telacadastro.php">Cadastrar Cliente</a></li>
   <li><a class="" href="chat.php">Chat</a>
   </li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
-     <?php
-     
-     echo"<h1> Bem vindo $logado </h1>";
-     
-     ?>
      
      
     
@@ -128,6 +129,7 @@ li a:hover {
                     <th scope="col">Procedimentos realizados</th>
                     <th scope="col">Procedimentos em andamento</th>
                     <th scope="col">Nivel de Acesso</th>
+                    <th scope="col">Avaliação </th>
                     <th scope="col">Editar cadastro</th>
                     <th scope="col">Excluir</th>
                 </tr>
@@ -142,13 +144,14 @@ li a:hover {
                         echo "<td>".$user_data['email']."</td>";
                         echo "<td>".$user_data['cpf']."</td>";
                         echo "<td>".$user_data['telefone']."</td>";
-                        echo "<td>".$user_data['sexo']."</td>";
+                        echo "<td>".$user_data['genero']."</td>";
                         echo "<td>".$user_data['datanasc']."</td>";
                         echo "<td>".$user_data['endereco']."</td>";
                         echo "<td>".$user_data['dataconsulta']. "</td>";
                         echo "<td>".$user_data['prorealizados']. "</td>";
                         echo "<td>".$user_data['proandamento']. "</td>";
                         echo "<td>".$user_data['nivel']."</td>";
+                        echo "<td>".$user_data['avaliacao']."</td>";
                        
                         
                        

@@ -10,8 +10,8 @@ if (isset($_POST['submit']))
    $total = $_POST['total'];
    
    
- $resultado = mysqli_query($conexao,"INSERT INTO financeiro (nome,valor,quantidade) VALUES ('$nome','$valor' , '$quantidade')");
-  $finan=" UPDATE financeiro SET total = valor * quantidade";
+ $resultado = mysqli_query($conexao,"INSERT INTO finan (nome,valor,quantidade) VALUES ('$nome','$valor' , '$quantidade')");
+  
 
  
  header('Location: financeiro.php');
