@@ -8,6 +8,7 @@ if (isset($_POST['submit']))
    $valor = $_POST['valor'];
    $quantidade = $_POST['quantidade'];
    $total = $_POST['total'];
+   $totalitens = $_POST['totalitens'];
    
    
  $resultado = mysqli_query($conexao,"INSERT INTO finan (nome,valor,quantidade) VALUES ('$nome','$valor' , '$quantidade')");

@@ -4,19 +4,12 @@ session_start();
 include_once ('index.php');
 
 // Consulta para obter o nome do usuário
-$consulta = "SELECT id , nome FROM usuarios"; // Corrija esta consulta conforme necessário
+$consulta = "SELECT id , nome FROM usuarios"; 
 
 $resultadoConsulta = mysqli_query($conexao, $consulta);
 
-if ($resultadoConsulta) {
-    $usuario = mysqli_fetch_assoc($resultadoConsulta);
 
-    echo "Bem-vindo " . $usuario['nome'];
-} else {
-    echo "Erro na consulta: " . mysqli_error($conexao);
-}
 
-// Consulta secundária com filtro
 if (!empty($_GET['search'])) {
     $date = $_GET['search'];
     $sql = "SELECT * FROM usuarios WHERE id LIKE '%$date%' or nome LIKE '%$date%' or email LIKE '%$date%' ORDER BY id ASC";
@@ -26,13 +19,16 @@ if (!empty($_GET['search'])) {
 
 $resultado = mysqli_query($conexao, $sql);
 
-// Agora você pode usar $resultado para exibir os resultados da segunda consulta
+
 
 ?>
 
 <html>
     
     <head>
+        
+       
+
     </head>
     <body>
         <style>
@@ -104,8 +100,8 @@ li a:hover {
   <li><a class="active" href="paginaadm.php">Home</a></li>
   <li><a class="" href="financeiro.php">Financeiro</a></li>
   <li><a class="" href="telacadastro.php">Cadastrar Cliente</a></li>
-  <li><a class="" href="chat.php">Chat</a>
-  </li>
+  <li><a class="" href="chat.php">Chat</a></li>
+  <li><a class="" href="calendario.php">Eventos marcados</a></li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
@@ -132,6 +128,8 @@ li a:hover {
                     <th scope="col">Avaliação </th>
                     <th scope="col">Editar cadastro</th>
                     <th scope="col">Excluir</th>
+                    
+                    
                 </tr>
             </thead>
             <tbody>
@@ -153,6 +151,8 @@ li a:hover {
                         echo "<td>".$user_data['nivel']."</td>";
                         echo "<td>".$user_data['avaliacao']."</td>";
                        
+                      
+                       
                         
                        
                         echo "<td>
@@ -164,15 +164,29 @@ li a:hover {
                             </td>
                            <td> 
 
-                            <a class='btn btn-sm btn-danger' href='deletar.php?id=$user_data[id]' title='Deletar'>
+                            <a class='btn btn-sm btn-danger'  href='deletar.php?id=$user_data[id]' title='Deletar'>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
                                     <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
                                 </svg>
                             </a>
+                            
+                            
+                            
+                            
+                            
+
+                          
                             </td>";
+                                                      
+                        
+                       
+                        
                         echo "</tr>";
+                        
+                        
                     }
                     ?>
+                
             </tbody>
         </table>
     </div>

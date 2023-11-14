@@ -112,32 +112,14 @@ li a:hover {
 
 <ul>
   <li><a class="active" href="paginacli.php">Home</a></li>
-  
+  <li><a class="" href="editadadoscli.php">Seus Dados</a></li>
   <li><a class="" href="chatcli.php">Chat para contato</a></li>
+  <li><a class="" href="avaliacao.php">Avalie nosso atendimento</a></li>
+  <li><a class="" href="notifica.php">Notificações </a></li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
-     <div>
-     <br><br>
-      Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica   <br> <br>
-     
-     <h1> Clinico geral</h1>
-     
-      <h5>Esse especialista é o que vai fazer a avaliaçao de seus dentes para verificar como anda o estado deles, além disso ele pode realizar outros procedimentos como :
-      </h5>
-     
-     <br><br>
-     
-     <h6> -Restaurações </h6>
-     <h6> -Aplicação de fluor </h6>
-     <h6> -Tratamento de canal </h6>
-     <h6> -Cirurgia simples </h6>
-     <h6> -Aplicação de selante</h6>
-     <h6> -Limpeza</h6>
-     <h6> -Colocação e retirada de aparelho</h6>
-     
-     </div>
-    
+             
          
     </body>
        

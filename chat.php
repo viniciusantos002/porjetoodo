@@ -167,6 +167,7 @@ h1{
                     
                     <a href="paginaadm.php">Voltar </a></div>
             </div>
+            
        </div>
        <script>
            const inputNome = document.getElementById("nome");

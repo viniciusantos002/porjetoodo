@@ -23,7 +23,8 @@ if (mysqli_num_rows($resultado) > 0) {
         header('Location:paginacli.php');
     }
     } else{
-        echo'Suas credenciais estão erradas';
+        echo'<script>alert("Dados inválidos.");window.location.href="telalog.php";</script>';
+        
     }
 
 

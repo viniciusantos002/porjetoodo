@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
    $resultado = mysqli_query($conexao,$verifica);
    
    if(mysqli_num_rows($resultado) >0){
-       echo"Já existe um usuario cadastrado com esse email;";
+       echo'<script>alert("Já existe um usuário cadastrado com esse email.");window.location.href="clientecadastrando.php";</script>';
    }
    else{
           
@@ -27,7 +27,7 @@ if (isset($_POST['submit']))
  
  if($inserir){
      
-     header('Location:telalog.php');
+    echo'<script>alert("Seu cadastro foi realizado com sucesso.");window.location.href="telalog.php";</script>';
  }
  else{
      echo'Erro ao cadastrar cliente';
@@ -131,7 +131,7 @@ if (isset($_POST['submit']))
 </head>
 <body>
     <div class="box">
-        <form action="telacadastro.php" method="POST">
+        <form action="clientecadastrando.php" method="POST">
             <fieldset>
                 <legend><b>Cadastro de Clientes</b></legend>
                 
