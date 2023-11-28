@@ -3,8 +3,8 @@
 session_start();
 include_once ('index.php');
 
-// Consulta para obter o nome do usuário
-$consulta = "SELECT id, nome FROM usuarios "; // Corrija esta consulta conforme necessário
+
+$consulta = "SELECT id, nome FROM usuarios ";
 
 $resultadoConsulta = mysqli_query($conexao, $consulta);
 
@@ -22,10 +22,22 @@ if ($resultadoConsulta) {
 
 <html>
     
-    <head>
-    </head>
     <body>
         <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #87CEEB, #f7f7f7);
+    
+}
+
+header {
+    
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -40,9 +52,9 @@ li {
 }
 
 li a {
-  position: relative;  
+   
   display: block;
-  color: white;
+  color: whitesmoke;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -52,74 +64,47 @@ li a {
 
 li a:hover {
   background-color: white;
+  color:#1E90FF;
 }
 
 
- body{
-            background-image: url(./fundoadm.png)  ;
-           background-color: white;
-           justify-content: center;
-           align-items: center;
-            background-size:100%;
-           text-align: center;
-           overflow-y: scroll;
-           height: 100%;
-        }
-        .table-bg{
-            opacity: 0.8;
-            background: rgba(65 , 105 , 237);
-            border-radius: 15px 15px 10px 10px;
-        }
 
-        .box-search{
-            display: flex;
-            justify-content: center;
-            
-        }
-        table{
-            text-align: center;
-        }    
-        h4{
-            text-align: right;
-        }
-        
-        h1{
-            text-align: center;
-        }
-        h2{
-            text-align: center;
-        }
-        div{ 
-            opacity: 0.9;
-            text-align: center;
-            border-radius: 35px 35px 35px 35px;
-            text-decoration: none;
-            background: rgba(65 , 105 , 237);
-            height: 800px;
-            width: 1600px;
-            padding: 20px;
-        }
+.content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+    color: 	#008B8B;
+}
+h3{
+    color: 	#008B8B;
+}
+
+
 </style>
-</head>
+
 <body>
      <header>
-        <h1>Clínica Odontológica</h1>
-            
+         <h1> Clínica odontológica Sorria </h1>
     </header>
     
-
+    <!-- Adicionando a nav bar -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-<ul>
+<ul>    
   <li><a class="active" href="paginacli.php">Home</a></li>
-  
   <li><a class="" href="chatcli.php">Chat para contato</a></li>
   <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
 </ul>
        
      <div>
      <br><br>
-      Aqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica   <br> <br>
+      <hAqui na nossa clínica fazemos vários procedimos para deixar seus dentes saudaveis e brancos , abaixo alguns dos procedimento que fazemos em nossa clínica   <br> <br>
      
      <h1> Clinico geral</h1>
      

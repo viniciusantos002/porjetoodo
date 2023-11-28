@@ -17,11 +17,7 @@ $resultado = $conexao->query($sql);
 
 <html>
 
-<head>
-    <header>
-        <h1>Clínica Odontológica</h1>
-    </header>
-</head>
+
 
 <body>
     <style>
@@ -61,7 +57,7 @@ $resultado = $conexao->query($sql);
 
         .table-bg {
             opacity: 0.8;
-            background: rgba(65, 105, 237);
+            background: rgba(45, 15, 207);
             border-radius: 15px 15px 10px 10px;
         }
 
@@ -73,7 +69,13 @@ $resultado = $conexao->query($sql);
         table {
             text-align: center;
         }
+        h1{
+    color: 	#008B8B;
+          }
     </style>
+    <header>
+        <h1>Clínica Odontológica</h1>
+    </header>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -105,17 +107,17 @@ $resultado = $conexao->query($sql);
             </thead>
             <tbody>
                 <?php
-                // Exibição dos resultados
+             
                 while ($row = $resultado->fetch_assoc()) {
                     $id = $row["id"];
                     $nome = $row["nome"];
                     $valor = $row["valor"];
                     $quantidade = $row["quantidade"];
 
-                    // Realiza a multiplicação
+                   
                     $total = $valor * $quantidade;
 
-                    // Atualiza a tabela com o resultado
+                   
                     $update_sql = "UPDATE finan SET total = $total WHERE id = $id";
                     $conexao->query($update_sql);
 

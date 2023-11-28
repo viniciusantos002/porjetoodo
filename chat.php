@@ -33,109 +33,72 @@
 <head>
     <style>
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    
-   
-    background-image: url(./fundchat.png)  ;
-    background-color: #f7f7f7;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+     background-color: rgba(173, 216, 230, 0.9);
 }
-
 
 .chat-container {
-     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    height: 700px;
-    width: 1650px;
-    background-color: lightblue;
-    border-radius: 30px;
-    overflow: hidden;
-    
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 70px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+h1 {
+    text-align: center;
+}
+
 .chat-messages {
-    
-    padding: 150px;
-    height: 300px;
-    overflow-y: scroll;
-}
-.message {
-    margin-bottom: 10px;
+    max-height: 3000px;
+    overflow-y: auto;
+    border: 3px solid #ccc;
     padding: 10px;
-    border-radius: 5px;
-     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 10px;
 }
 
-.chat-input input {
-    flex: 1;
-    padding: 8px;
+.chat-input {
+    margin-bottom: 10px;
+   
+}
+
+input, button, a {
+    padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 35px;
+    margin: 5px;
+    width: 100%;
+}
+
+.button {
+    width: calc(115% - 100px); 
     
 }
 
-
-.sent-message {
+button {
     background-color: #4caf50;
     color: white;
-    
-}
-.chat-input {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid #ccc;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
 }
 
-.chat-input button {
-            cursor: pointer;
-            border-radius:  15px;
-            outline: none;
-            font-size: 20px;
-            text-decoration: none;        
-            background-color:dodgerblue;
-            padding: 5px;
-            width: 100%;
-            border-radius: 50px;
-            color: white;
-            
+button:hover {
+    background-color: #45a049;
 }
 
-@media (max-width: 768px) {
-    .chat-container {
-        max-width: 100%;
-    }
+
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 24px;
 }
-h1{
-   
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
- a{
-      cursor: pointer;
-            border-radius: 35px;
-            outline: none;
-            font-size: 20px;
-            text-decoration: none;        
-            background-color:dodgerblue;
-            padding: 5px;
-            width: 100%;
-           
-            color: white;
-            display: flex;
-    justify-content: center;
-   
-         
-        
-        }
+
 
     </style>
         
@@ -163,18 +126,16 @@ h1{
             </div>
             
             <div>
-                <div class="chat-input button">
-                    
-                    <a href="paginaadm.php">Voltar </a></div>
+                  <div class="chat-input button">
+                    <button id  ="enviar" onclick="window.location.href='paginaadm.php';"> Voltar </button>
             </div>
-            
        </div>
        <script>
            const inputNome = document.getElementById("nome");
            const inputMensagem = document.getElementById("mensagem");
            
            document.getElementById("enviar").addEventListener("click",() => {
-              //verificar se o usuario informou os dados
+             
               if(!inputNome.value || !inputMensagem.value)
                   return;
               var mensagem = `${inputNome.value}: ${inputMensagem.value}`;
@@ -208,7 +169,7 @@ h1{
            }
            atualizaMensagens();
            
-           setInterval(atualizaMensagens, 2000);
+           setInterval(atualizaMensagens, 5000);
        </script>    
        
    </body>

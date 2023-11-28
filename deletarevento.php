@@ -1,11 +1,11 @@
 <?php
 
-include_once('index.php'); // Certifique-se de incluir o arquivo de conexão com o banco de dados
+include_once('index.php'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $eventId = $_POST['id'];
 
-    // Execute a query para excluir o evento com base no ID
+   //Deletar da tabela o evento selecionado//
     $deleteQuery = "DELETE FROM eventos WHERE id = $eventId";
     $result = mysqli_query($conexao, $deleteQuery);
 

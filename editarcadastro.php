@@ -14,7 +14,7 @@
                 $email = $user_data['email'];
                 $cpf = $user_data['cpf'];
                 $telefone = $user_data['telefone'];
-                $sexo = $user_data['sexo'];
+                $sexo = $user_data['genero'];
                 $datanasc = $user_data['datanasc'];
                 $endereco = $user_data['endereco'];
                 $dataconsulta = $user_data['dataconsulta'];
@@ -40,83 +40,86 @@
     
     <title>Editar Cliente </title>
      <style>
-       body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: url(./dentista.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100%;
-        }
-        .box{
-            
-            opacity: 0.6;
-            text-align: center;
-            color: white;
-            position: absolute;
-            top: 85%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            background-color:	#1E90FF;
-            padding: 30px;
-            border-radius: 15px;
-            width: 20%;
-        }
-        fieldset{
-            border: blue;
-        }
-        
-        
-        
-        .inputUser{
-            background: none;
-            border: none;
-            border-bottom: 1px solid white;
+       body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: linear-gradient(to bottom, #87CEEB, #f7f7f7);
+}
+
+.box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Restante do seu CSS permanece inalterado */
+
+fieldset {
+    border: none;
+}
+
+.inputBox {
+    margin-bottom: 20px;
+}
+
+.labelInput {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputUser {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.radioGroup {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+div{
+    text-align: center;
+}
+.inputsubmit{
+            padding: 15px;
             outline: none;
-            color: white;
-            font-size: 15px;
-            width: 100%;
-            letter-spacing: 2px;
-        }
-        .labelInput{
-           
-            top: 0px;
-            left: 0px;
-            pointer-events: none;
-            transition: .5s;
-        }
-        
-        #data_nascimento{
-            border: none;
-            padding: 8px;
-            border-radius: 10px;
-            outline: none;
-            font-size: 15px;
-        }
-        #submit{
+            font-size: 20px;
+            text-decoration: none;        
             background-color: blue;
             width: 100%;
-            border: none;
-            padding: 15px;
+            border-radius: 35px;
             color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 10px;
+            
+            
         }
-        
+        .inputsubmit:hover{
+            background-color: #1E90FF;
+            cursor: pointer;
+        }
         a{
-         background-color: blue;
-         width: 290px;
-         border:none;
-         padding:15px;
-         color: white;
-         font-size: 15px;
-         cursor: pointer;
-         border-radius: 10px;
-         text-decoration: none;
-        justify-content: center;
-        display: flex;
-        
-        
+            border: none;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color: blue;
+            padding: 15px;
+            width: 100%;
+            border-radius: 35px;
+            color: white;
+            
+        }
+        a:hover{
+            background-color: #1E90FF;
+            cursor: pointer;
         }
         
     </style>    
@@ -158,17 +161,17 @@
                 <p>Sexo:</p>
                 <input type="radio" id="feminino" name="genero" value="feminino" <?php echo ($sexo == 'feminino') ? 'checked' : '';?> required>
                 <label for="feminino">Feminino</label>
-                <br>
+                
                 <input type="radio" id="masculino" name="genero" value="masculino" <?php echo ($sexo == 'masculino') ? 'checked' : '';?> required>
                 <label for="masculino">Masculino</label>
-                <br>
+                
                 <input type="radio" id="outro" name="genero" value="outro" <?php echo ($sexo == 'outro') ? 'checked' : '';?> required>
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="data_nascimento"><b>Data de Nascimento</b></label>
                 <br><br>
                 <input type="date" name="datanasc" id="datanasc" value=<?php echo $datanasc;?> required>
-                <br><br><br>
+                <br><br>
                 <div class="inputBox">
                     <label for="endereco" class="labelInput">Endereço</label>
                     <input type="text" name="endereco" id="endereco" class="inputUser" value=<?php echo $endereco;?> required>
@@ -184,9 +187,10 @@
                 </div>
                 <br><br>
                 
-                <br><br>
+               
                 <label for="dataconsulta"><b>Data da Consulta</b></label>
                 <br><br>
+                
                 <input type="date" name="dataconsulta" id="dataconsulta" value=<?php echo $dataconsulta;?> >
                 <br><br>
                 <br><br>
@@ -210,8 +214,9 @@
                     <input type="text" name="nivel" id="nivel" class="inputUser" value=<?php echo $nivel;?> >
                 </div>
                 <br><br>
-				<input type="hidden" name="id" value=<?php echo $id;?>>
-                <input type="submit" name="update" id="submit">
+                
+				<input type="hidden" name="id" value="<?php echo $id;?>">
+                                <input type="submit" name="update" id="submit" value="Salvar alterações">
                 <br><br>
                 <a href="paginaadm.php">Voltar</a>
                 <br><br>

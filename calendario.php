@@ -1,13 +1,17 @@
 <?php 
 include_once('index.php');
 
+//consulta no banco de dados//
 $res = "SELECT id, titulo, data_evento, data_fim FROM eventos";
 $resueve = mysqli_query($conexao, $res);
 
+
+//Criando um array para os eventos//
 $events = array();
 
 while ($row_events = mysqli_fetch_array($resueve)) {
     $events[] = array(
+        //informações do evento que serão armazenadas no banco de dados//
         'id' => $row_events['id'],
         'title' => $row_events['titulo'],
         'start' => $row_events['data_evento'],
@@ -27,47 +31,65 @@ while ($row_events = mysqli_fetch_array($resueve)) {
     <style>
         #calendario {
             max-width: 100%;
-            margin: 0 auto;
+            margin: 30px;
         }
 
         .highlight-event {
-            background-color: cyan; /* Cor de destaque para os eventos salvos */
-            border: 1px solid #ffc107; /* Cor da borda */
-            color: #856404; /* Cor do texto */
+            background-color: #1E90FF; 
+            border: 2px solid #ffc107; 
+            color: #856404; 
             position: relative;
+            margin-top: 10px;
+            padding:  10px 15px;
         }
 
         .delete-button {
             cursor: pointer;
             color: #fff;
-            background-color: #dc3545; /* Cor do botão Deletar */
+            background-color: #dc3545; 
             border: none;
             padding: 5px 10px;
-            border-radius: 4px;
+            border-radius: 15px;
             margin-top: 5px;
             position: absolute;
-            top:0;
-            right: 0;
+            top: -5px;
+            right: 2px;
            
         }
          #btnVoltar {
-            margin-top: 0px;
+            margin-top: 10px;
             padding: 15px 20px;
-            background-color: #007bff; /* Cor do botão Voltar */
+            background-color: #007bff; 
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             text-align: center;
+            display: block;
+            margin: 0 auto;
         }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #87CEEB, #f7f7f7);
+             }
+        h1{
+            text-align: center;
+            color:	#008B8B;
+             }
+
+             
+
     </style>
 <button id="btnVoltar">Voltar</button> <br><br>
 </head>
 <body>
+    <h1> Caléndario de eventos </h1>
+    <br><br>
     
     <div id="calendario"></div>
     
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
@@ -75,8 +97,8 @@ while ($row_events = mysqli_fetch_array($resueve)) {
     
     
     <script>
-        
-        
+            
+        //Configurando o full calender//
         $(document).ready(function() {
             $('#calendario').fullCalendar({
                 header: {
@@ -88,9 +110,10 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                 locale: 'pt-br',
                 navLinks: true,
                 eventLimit: true,
-                events: <?php echo json_encode($events); ?>,
+                events: <?php echo json_encode($events);?>,
                 selectable: true,
                 selectHelper: true,
+                //Função para adicionar os eventos//
                 select: function(start, end) {
                     var titulo = prompt('Informe o título do evento:');
                     if (titulo) {
@@ -100,6 +123,7 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                             end: end.format('YYYY-MM-DD HH:mm:ss')
                         };
                         $.ajax({
+                            //Manda para outra aba para adicionar evento//
                             url: 'addevento.php',
                             type: 'POST',
                             data: eventData,
@@ -111,18 +135,21 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                     }
                 },
                 editable: true,
+                
+                //Função para atualizar os eventos já existentes//
                 eventResize: function(event) {
                     updateEvent(event);
                 },
                 eventDrop: function(event) {
                     updateEvent(event);
                 },
+                //Função para renderizar Eventos//
                 eventRender: function(event, element) {
-                    // Adicionar a classe 'highlight-event' aos eventos salvos
+                    
                     if (event.salvo) {
                         element.addClass('highlight-event');
-                        // Adicionar botão Deletar ao evento
-                        element.find('.fc-title').append('<button class="delete-button" onclick="deleteEvent(' + event.id + ')">Deletar</button>');
+                       //Botão para deletar os eventos//
+                        element.find('.fc-title').append('<button class="delete-button" onclick="deleteEvent(' + event.id + ')">Excluir</button>');
                     }
                 }
             });
@@ -141,13 +168,14 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                         alert(response);
                     }
                 });
+                
             }
 
-            // Função para deletar um evento
+               //Função para deletar os eventos cadastrados//         
             window.deleteEvent = function(eventId) {
                 if (confirm('Tem certeza de que deseja deletar este evento?')) {
                     $.ajax({
-                        url: 'deletarevento.php', // Substitua pelo nome correto do seu arquivo PHP de exclusão
+                        url: 'deletarevento.php', 
                         type: 'POST',
                         data: { id: eventId },
                         success: function(response) {
@@ -160,7 +188,7 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                 }
             };
              $('#btnVoltar').click(function() {
-                window.location.href = 'paginaadm.php'; // Substitua 'outra_pagina.php' pela URL desejada
+                window.location.href = 'paginaadm.php'; 
             });
         });
     </script>

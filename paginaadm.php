@@ -3,7 +3,7 @@
 session_start();
 include_once ('index.php');
 
-// Consulta para obter o nome do usuário
+
 $consulta = "SELECT id , nome FROM usuarios"; 
 
 $resultadoConsulta = mysqli_query($conexao, $consulta);
@@ -48,7 +48,7 @@ li {
 li a {
   position: relative;  
   display: block;
-  color: white;
+  color: whitesmoke;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -58,6 +58,7 @@ li a {
 
 li a:hover {
   background-color: white;
+  color:#1E90FF;
 }
 
 
@@ -70,9 +71,9 @@ li a:hover {
            text-align: center;
         }
         .table-bg{
-            opacity: 0.8;
-            background: rgba(65 , 105 , 237);
-            border-radius: 15px 15px 10px 10px;
+            opacity: 0.9;
+            background: rgba(35 , 75 , 157);
+            border-radius: 35px 15px 35px 15px;
         }
 
         .box-search{
@@ -82,10 +83,30 @@ li a:hover {
         }
         table{
             text-align: center;
+            width: 80%;
+            margin: 30px auto;
         }
         caption{
             text-align: center;
         }
+
+       
+.table tbody td {
+    word-break: break-all;
+}
+
+
+@media (max-width: 768px) {
+    .table {
+        font-size: 12px;
+    }
+}
+h1{
+    color: 	#008B8B;
+}
+h3{
+    color: 	#008B8B;
+}
 
 </style>
 </head>
@@ -109,7 +130,7 @@ li a:hover {
      
     
     <div class="m-5">
-          <h3> Dados dos Clientes </h3>
+          <h3> Lista dos Clientes Cadastrados </h3>
         <table class="table text-white table-bg"> 
             <thead>
  

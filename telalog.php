@@ -13,67 +13,62 @@
             
         }
         div{
-            background-color: rgba(0, 191 , 255 );
-            opacity: 0.7;
+            background-color: 	#008B8B;
+            opacity: 0.8;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
             padding: 80px;
-            border-radius: 55px;
+            border-radius: 105px;
             color: whitesmoke;
             text-align: center;
             
         }
         input{
             padding: 15px;
-            border-radius: 15px;
+            border-radius: 35px;
             outline: none;
             font-size: 20px;
         }
         .inputsubmit{
-           padding: 15px;
-            border: none;
+            padding: 15px;
             outline: none;
             font-size: 20px;
             text-decoration: none;        
             background-color: blue;
-            border: none;
-            padding: 15px;
             width: 100%;
-            border-radius: 50px;
+            border-radius: 35px;
             color: white;
-            font-size: 20px;
+            
             
         }
         .inputsubmit:hover{
-            background-color: blue;
+            background-color: #1E90FF;
             cursor: pointer;
         }
         a{
-            padding: 15px;
             border: none;
             outline: none;
             font-size: 20px;
             text-decoration: none;        
             background-color: blue;
-            border: none;
             padding: 15px;
             width: 100%;
-            border-radius: 50px;
+            border-radius: 35px;
             color: white;
-            font-size: 20px;
             
         }
         a:hover{
-            background-color: blue;
+            background-color: #1E90FF;
             cursor: pointer;
         }
+        
     </style>
 </head>
 <body>
     <div>
-        <h1>Login</h1>
+        <h1>LOGIN</h1>
         <form action="testelog.php" method="POST">
             <input type="text" name="email" placeholder="Email" required>
         <br><br>

@@ -3,8 +3,8 @@
 session_start();
 include_once ('index.php');
 
-// Consulta para obter o nome do usuário
-$consulta = "SELECT id, nome FROM usuarios "; // Corrija esta consulta conforme necessário
+
+$consulta = "SELECT id, nome FROM usuarios "; 
 
 $resultadoConsulta = mysqli_query($conexao, $consulta);
 

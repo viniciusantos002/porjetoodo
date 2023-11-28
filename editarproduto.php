@@ -33,81 +33,92 @@
     
     <title>Editar Produto </title>
     <style>
-       body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: url(./dentista.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100%;
-        }
-        .box{
-            opacity: 0.6;
-            text-align: center;
-            color: white;
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            background-color:	#1E90FF;
-            padding: 30px;
-            border-radius: 15px;
-            width: 20%;
-        }
-        fieldset{
-            border: blue;
-        }
-        
-        
-        .inputUser{
-            background: none;
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f7f7f7;
+}
+
+.box {
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.labelInput {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputBox {
+    margin-bottom: 20px;
+}
+
+.inputUser {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+.button-container {
+    text-align: center;
+}
+
+
+#submit {
+    padding: 15px;
             border: none;
-            border-bottom: 1px solid white;
             outline: none;
-            color: white;
-            font-size: 15px;
-            width: 100%;
-            letter-spacing: 2px;
-        }
-        .labelInput{
-           
-            top: 0px;
-            left: 0px;
-            pointer-events: none;
-            transition: .5s;
-        }
-        
-        #data_nascimento{
-            border: none;
-            padding: 8px;
-            border-radius: 10px;
-            outline: none;
-            font-size: 15px;
-        }
-        #submit{
+            font-size: 20px;
+            text-decoration: none;        
             background-color: blue;
-            width: 100%;
             border: none;
             padding: 15px;
+            width: 50%;
+            border-radius: 50px;
             color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        a{
-         background-color: blue;
-         width: 290px;
-         border:none;
-         padding:15px;
-         color: white;
-         font-size: 15px;
-         cursor: pointer;
-         border-radius: 10px;
-         text-decoration: none;
-        justify-content: center;
-        display: flex;
-        
-        }
+           
+            
+}
+
+#submit:hover {
+    background-color: #1E90FF;
+    cursor: pointer;
+}
+
+a {
+            padding: 15px;
+            outline: none;
+            font-size: 20px;
+            text-decoration: none;        
+            background-color: blue;
+            width: 65%;
+            border-radius: 50px;
+            color: white;
+            
+}
+
+a:hover {
+    background-color: #1E90FF;
+    text-decoration: underline;
+    text-decoration: none;
+    cursor: pointer;
+}
+title{
+    text-align: center;
+}
         
     </style>
 </head>
@@ -155,10 +166,12 @@
                     
                 </div>
                 <br><br>
+                <div class="button-container">
 				<input type="hidden" name="id" value=<?php echo $id;?>>
-                <input type="submit" name="update" id="submit">
+                                <input type="submit" name="update" id="submit" value="Alterar ">
                 <br><br>
                 <a href="financeiro.php">Voltar</a>
+                </div>
                 <br><br>
             </fieldset>
         </form>

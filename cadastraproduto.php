@@ -28,75 +28,75 @@ if (isset($_POST['submit']))
    
     <title>Financeiro </title>
         <style>
-       body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: url(./dentista.png);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100%;
-        }
-        .box{
-            
-            opacity: 0.6;
-            text-align: center;
-            color: white;
-            position: absolute;
-            top: 55%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            background-color:	#1E90FF;
-            padding: 30px;
-            border-radius: 15px;
-            width: 20%;
-        }
-        fieldset{
-            border: blue;
-        }
-        
-        
-        
-        .inputUser{
-            background: none;
-            border: none;
-            border-bottom: 1px solid white;
-            outline: none;
-            color: white;
-            font-size: 15px;
-            width: 100%;
-            letter-spacing: 2px;
-        }
-        .labelInput{
-           
-            top: 0px;
-            left: 0px;
-            pointer-events: none;
-            transition: .5s;
-        }
-        
-      
-        #submit{
-            background-color: blue;
-            width: 100%;
-            border: none;
-            padding: 15px;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        a{
-         background-color: blue;
-         width: 100%;
-         border:none;
-         padding:15px;
-         color: white;
-         font-size: 15px;
-         cursor: pointer;
-         border-radius: 10px;
-         text-decoration: none;
-        
-        }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-image: url(./dentista.png);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+            }
+            .box{
+
+                opacity: 0.6;
+                text-align: center;
+                color: white;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color:	#1E90FF;
+                padding: 30px;
+                border-radius: 15px;
+                width: 20%;
+            }
+            fieldset{
+                border: blue;
+            }
+
+
+
+            .inputUser{
+                background: none;
+                border: none;
+                border-bottom: 1px solid white;
+                outline: none;
+                color: white;
+                font-size: 15px;
+                width: 100%;
+                letter-spacing: 2px;
+            }
+            .labelInput{
+
+                top: 0px;
+                left: 0px;
+                pointer-events: none;
+                transition: .5s;
+            }
+
+
+            #submit{
+                background-color: blue;
+                width: 100%;
+                border: none;
+                padding: 15px;
+                color: white;
+                font-size: 15px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+
+            a{
+                background-color: blue;
+                width: 100%;
+                border:none;
+                padding:15px;
+                color: white;
+                font-size: 15px;
+                cursor: pointer;
+                border-radius: 10px;
+                text-decoration: none;
+
+            }
         
     </style>   
 </head>
