@@ -3,6 +3,7 @@ session_start();
 //Inclui a conexão com o banco de dados//
 include_once ('index.php');
 
+
 //Consulta o banco de dados //
 $consulta = "SELECT id , nome FROM usuarios";
 

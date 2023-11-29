@@ -175,13 +175,13 @@ if (!empty($_GET['id'])) {
 
                     </div>
                     <p>Sexo:</p>
-                    <input type="radio" id="Feminino" name="genero" value="Feminino" <?php echo ($sexo == 'Feminino') ? 'checked' : ''; ?> required>
+                    <input type="radio" id="Feminino" name="genero" value="Feminino" <?php echo ($sexo == 'Feminino') ? 'checked' : ''; ?> >
                     <label for="feminino">Feminino</label>
 
-                    <input type="radio" id="Masculino" name="genero" value="Masculino" <?php echo ($sexo == 'Masculino') ? 'checked' : ''; ?> required>
+                    <input type="radio" id="Masculino" name="genero" value="Masculino" <?php echo ($sexo == 'Masculino') ? 'checked' : ''; ?> >
                     <label for="masculino">Masculino</label>
 
-                    <input type="radio" id="Outro" name="genero" value="Outro" <?php echo ($sexo == 'Outro') ? 'checked' : ''; ?> required>
+                    <input type="radio" id="Outro" name="genero" value="Outro" <?php echo ($sexo == 'Outro') ? 'checked' : ''; ?> >
                     <label for="outro">Outro</label>
                     <br><br>
                     <label for="data_nascimento"><b>Data de Nascimento</b></label>
@@ -191,7 +191,6 @@ if (!empty($_GET['id'])) {
                     <div class="inputBox">
                         <label for="endereco" class="labelInput">Endereço</label>
                         <input type="text" name="endereco" id="endereco" class="inputUser" value=<?php echo $endereco; ?> required>
-
                     </div>
                     <br><br>
 
@@ -202,8 +201,6 @@ if (!empty($_GET['id'])) {
 
                     </div>
                     <br><br>
-
-
                     <label for="dataconsulta"><b>Data da Consulta</b></label>
                     <br><br>
 
@@ -221,9 +218,6 @@ if (!empty($_GET['id'])) {
 
                     </div>
                     <br><br>
-
-
-
                     <div class="inputBox">
                         <label for="proandamento" class="labelInput">Procedimentos em Andamento</label>
                         <input type="text" name="proandamento" id="proandamento" class="inputUser" value=<?php echo $proandamento; ?> >
@@ -231,8 +225,8 @@ if (!empty($_GET['id'])) {
                     </div>
                     <br><br>
                     <div class="inputBox">
-    <label for="anotacoes" class="labelInput"> Anotações </label>
-    <textarea name="anotacoes" id="anotacoes" class="inputUser" required><?php echo $anotacoes; ?></textarea>
+                        <label for="anotacoes" class="labelInput"> Anotações </label>
+                        <textarea name="anotacoes" id="anotacoes" class="inputUser" ><?php echo $anotacoes; ?></textarea>
                     </div>
 
 
@@ -246,14 +240,14 @@ if (!empty($_GET['id'])) {
             </form>
         </div>
         <script>
-    function showAlert(success) {
-        if (success) {
-            alert('Alterações realizadas com sucesso');
-        } else {
-            alert('Não foi realizada alteração ou teve um erro');
-        }
-    }
-</script>
+            function showAlert(success) {
+                if (success) {
+                    alert('Alterações realizadas com sucesso');
+                } else {
+                    alert('Não foi realizada alteração ou teve um erro');
+                }
+            }
+        </script>
 
     </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
 $pdo = new PDO('sqlite: bd.cadastrocli');
+//Cria uma tabela mensagens caso não exista no banco de dados//
 $pdo->exec('CREATE TABLE IF NOT EXISTS mensagens (id INTEGER PRIMARY KEY,mensagem TEXT)');
 
 //verifica se uma variável chamada mensagem está presente na requisição POST//

@@ -138,7 +138,7 @@ $nome = $_SESSION['nome'];
             <li><a class="" href="chatcli.php">Chat para contato</a></li>
             <li><a class="sair" href="sair.php" class="btn btn-danger" >Sair</a></li>
         </ul>
-        <h1> Bem-vindo(a) <?php echo $nome; ?> </h1>
+        <h1> Bem-vindo(a)  </h1>
 
         <div class="container"> 
             <br><br>

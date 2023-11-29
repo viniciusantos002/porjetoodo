@@ -68,7 +68,7 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                 cursor: pointer;
                 text-align: center;
                 display: block;
-                margin: 0 auto; 
+                margin: 0 auto;
             }
 
             #calendario {
@@ -119,7 +119,7 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                                 end: end.format('YYYY-MM-DD HH:mm:ss')
                             };
                             $.ajax({
-                                //Manda para outra aba para adicionar evento//
+                                //Ao clicar em ok ele adiciona um envento//
                                 url: 'addevento.php',
                                 type: 'POST',
                                 data: eventData,
@@ -154,7 +154,8 @@ while ($row_events = mysqli_fetch_array($resueve)) {
                     var eventData = {
                         id: event.id,
                         start: event.start.format('YYYY-MM-DD HH:mm:ss'),
-                        end: event.end.format('YYYY-MM-DD HH:mm:ss')
+                        end: event.end.format('YYYY-MM-DD HH:mm:ss'),
+                        titulo:event.titulo
                     };
                     $.ajax({
                         url: 'alterandoevento.php',

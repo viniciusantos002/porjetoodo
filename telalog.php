@@ -13,14 +13,14 @@
 
             }
             div{
-                background-color: 	#008B8B;
+                background-color: #008B8B;
                 opacity: 0.8;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
                 padding: 80px;
-                border-radius: 105px;
+                border-radius: 35px;
                 color: whitesmoke;
                 text-align: center;
 

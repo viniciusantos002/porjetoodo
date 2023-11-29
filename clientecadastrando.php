@@ -179,13 +179,13 @@ if (isset($_POST['submit'])) {
                     <br><br>
 
                     <p>Sexo</p>
-                    <input type="radio" id="Feminino" name="genero" value="feminino" required>
+                    <input type="radio" id="feminino" name="genero" value="feminino" required>
                     <label for="feminino">Feminino</label>
 
-                    <input type="radio" id="Masculino" name="genero" value="masculino" required>
+                    <input type="radio" id="masculino" name="genero" value="masculino" required>
                     <label for="masculino">Masculino</label>
 
-                    <input type="radio" id="Outro" name="genero" value="outro" required>
+                    <input type="radio" id="outro" name="genero" value="outro" required>
                     <label for="outro">Outro</label>
                     <br><br>
                     <br><br>
