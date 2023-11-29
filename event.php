@@ -1,4 +1,5 @@
 <?php
+
 include_once('index.php');
 
 $sql = "SELECT id, title, start, end FROM eventos";

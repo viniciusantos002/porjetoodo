@@ -1,78 +1,101 @@
 <?php
+// Verifica se o formulário foi enviado ao clicar no botão e vai executar
+if (isset($_POST['submit'])) {
+    // Inclui o arquivo de conexão com o banco de dados
+    include_once('index.php');
 
-if (isset($_POST['submit']))
-{    
-   include_once('index.php');
-   
-   $nome = $_POST['nome'];
-   $valor = $_POST['valor'];
-   $quantidade = $_POST['quantidade'];
-   $total = $_POST['total'];
-   $totalitens = $_POST['totalitens'];
-   
-   
- $resultado = mysqli_query($conexao,"INSERT INTO finan (nome,valor,quantidade) VALUES ('$nome','$valor' , '$quantidade')");
-  
+    // Obtém os valores do formulário pelo método POST
+    $nome = $_POST['nome'];
+    $valor = $_POST['valor'];
+    $quantidade = $_POST['quantidade'];
+    $total = $_POST['total'];
 
- 
- header('Location: financeiro.php');
- 
+    // Insere os dados na tabela finan que foi obtido no formulário
+    $resultado = mysqli_query($conexao, "INSERT INTO finan (nome, valor, quantidade) VALUES ('$nome', '$valor', '$quantidade')");
+
+    // Verifica se a inserção foi bem-sucedida
+    if ($resultado) {
+        // Imprime um script JavaScript para mostrar um alerta
+        echo '<script>';
+        echo 'alert("Produto cadastrado com sucesso");';
+        // Redireciona após o alerta
+        echo 'window.location.href="financeiro.php";';
+        echo '</script>';
+    } else {
+        echo 'Erro ao cadastrar produto';
+    }
 }
-
- 
-
 ?>
 
+
 <html lang="en">
-<head>
-   
-    <title>Financeiro </title>
+    <head>
+
+        <title>Financeiro </title>
         <style>
-            body{
-                font-family: Arial, Helvetica, sans-serif;
-                background-image: url(./dentista.png);
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: 100%;
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background: linear-gradient(to bottom, #87CEEB, #f7f7f7);
             }
-            .box{
 
-                opacity: 0.6;
-                text-align: center;
-                color: white;
-                position: absolute;
-                top: 55%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                background-color:	#1E90FF;
-                padding: 30px;
-                border-radius: 15px;
-                width: 20%;
-            }
-            fieldset{
-                border: blue;
+            .box {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 35px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
 
 
 
-            .inputUser{
-                background: none;
+
+            fieldset {
                 border: none;
-                border-bottom: 1px solid white;
-                outline: none;
-                color: white;
-                font-size: 15px;
+            }
+
+            .inputBox {
+                margin-bottom: 20px;
+
+            }
+
+            .labelInput {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .inputUser {
                 width: 100%;
-                letter-spacing: 2px;
-            }
-            .labelInput{
-
-                top: 0px;
-                left: 0px;
-                pointer-events: none;
-                transition: .5s;
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 35px;
             }
 
+            .radioGroup {
+                display: flex;
+                gap: 10px;
+            }
+
+            input[type="radio"] {
+                margin-right: 5px;
+            }
+
+            input[type="submit"], a {
+                cursor: pointer;
+                border-radius: 5px;
+                outline: none;
+                font-size: 16px;
+                text-decoration: none;
+                background-color: dodgerblue;
+                color: white;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+                display: block;
+                margin-top: 10px;
+            }
 
             #submit{
                 background-color: blue;
@@ -82,55 +105,70 @@ if (isset($_POST['submit']))
                 color: white;
                 font-size: 15px;
                 cursor: pointer;
-                border-radius: 10px;
+                border-radius: 35px;
             }
 
             a{
                 background-color: blue;
-                width: 100%;
+                width: 290px;
                 border:none;
-                padding:15px;
+                padding:15px 145px;
                 color: white;
                 font-size: 15px;
                 cursor: pointer;
-                border-radius: 10px;
+                border-radius: 35px;
                 text-decoration: none;
+                display: block;
+                margin-top: 10px;
+
 
             }
-        
-    </style>   
-</head>
-<body>
-    <div class="box">
-        <form action="cadastraproduto.php" method="POST">
-            <fieldset>
-                <legend><b>Financeiro</b></legend>
-                <br><br>
-                <div class="inputBox">
-                    <label for="nome" class="labelInput">Nome </label>
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="valor" class="labelInput">Valor</label>
-                    <input type="text" name="valor" id="valor" class="inputUser" required>
-                    
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <label for="quantidade" class="labelInput">Quantidade</label>
-                    <input type="text" name="quantidade" id="quantidade" class="inputUser" required>
-                    
-                </div>
-                <br><br>
-                <br><br>
-                <input type="submit" name="submit" id="submit">
-                <br><br>
-                
-                
-            </fieldset>
-        </form>
-    </div>
-</body>
+            legend{
+                text-align: center;
+                padding: 10px;
+                color: 	dodgerblue;
+                font-size: 20px;
+            }
+
+            div{
+                text-align: center;
+            }
+
+        </style>   
+    </head>
+    <body>
+        <div class="box">
+            <form action="cadastraproduto.php" method="POST">
+                <fieldset>
+                    <legend><b>Adicionando Produto</b></legend>
+                    <br><br>
+                    <div class="inputBox">
+                        <label for="nome" class="labelInput">Nome </label>
+                        <input type="text" name="nome" id="nome" class="inputUser" required>
+
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <label for="valor" class="labelInput">Valor</label>
+                        <input type="text" name="valor" id="valor" class="inputUser" required>
+
+                    </div>
+                    <br><br>
+                    <div class="inputBox">
+                        <label for="quantidade" class="labelInput">Quantidade</label>
+                        <input type="text" name="quantidade" id="quantidade" class="inputUser" required>
+
+                    </div>
+                    <br><br>
+                    <br><br>
+                    <input type="submit" name="submit" id="submit" value="Cadastrar">
+                    <br>
+
+                    <a href="financeiro.php"> Voltar </a>
+
+
+                </fieldset>
+            </form>
+        </div>
+    </body>
 </html>
